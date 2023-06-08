@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     QWidget w;
     w.setWindowTitle("ASCII Art");
-    QString asciiChars = "  .,:ilwW@@";
+
 
     QVBoxLayout layout;
     QHBoxLayout file;

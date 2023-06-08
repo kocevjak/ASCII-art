@@ -10,6 +10,9 @@ class picture
 {
 private:
     QString AsciiIm;    //proměná pro uložení onrazku ve formátu ASCII
+    QPicture im;        //proměná pro uložení obrazku
+
+    QString asciiChars = "  .,:ilwW@@"; //znaky pro ASCII art;
 public:
     picture(QPicture im); //konstruktor
 
@@ -17,7 +20,6 @@ public:
 
     QString getAsciiIm();   //vrátí ascii obrazek
 
-    QPicture im;//proměná pro uložení obrazku
 };
 
 #endif // PICTURE_H
