@@ -1,5 +1,4 @@
 
-#include "mainwindow.h"
 
 #include <QApplication>
 #include <QPushButton>
@@ -11,6 +10,8 @@
 #include <QImage>
 #include <QRgb>
 #include <QColor>
+
+#include "picture.h"
 
 int main(int argc, char *argv[])
 {
@@ -73,7 +74,7 @@ int main(int argc, char *argv[])
         //pic.
         picture_jpg.setPixmap(QPixmap::fromImage(im));
         color.setRgb(im.pixel(0,0));
-        picture_ascii.setText(color);
+        //picture_ascii.setText(color);
     });
 
     return a.exec();
