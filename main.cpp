@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
     w.show();
 
     QObject::connect(&open_foto, &QPushButton::clicked,[&](){
-        QString FilePaths = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image files (*jpg *png");
+        QString FilePaths = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image file (*jpg *png");
         data.SetIm(FilePaths);
         picture_jpg.setPixmap(data.getPixmap());
         font.setPixelSize(picture_jpg.height()/data.getHeight());

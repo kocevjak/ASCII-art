@@ -6,7 +6,7 @@
 #include <QString>
 #include <QColor>
 #include <QFont>
-
+#include <QLabel>
 
 class Picture
 {
