@@ -9,7 +9,9 @@ class picture
 private:
 
 public:
-    picture(QPicture im);
+    picture(QPicture im); //konstruktor
+
+
 
     QPicture im;//proměná pro uložení obrazku
 };
