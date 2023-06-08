@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     QWidget w;
-    Picture data();
+    Picture data;
     w.setWindowTitle("ASCII Art");
 
 
@@ -70,12 +70,8 @@ int main(int argc, char *argv[])
 
     QObject::connect(&open_foto, &QPushButton::clicked,[&](){
         QString FilePaths = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image files (*jpg *png");
-        QImage im(FilePaths);
-        QColor color;
-        //pic.
-        picture_jpg.setPixmap(QPixmap::fromImage(im));
-        color.setRgb(im.pixel(0,0));
-        //picture_ascii.setText(color);
+        data.SetIm(FilePaths);
+        picture_jpg.setPixmap(data.getPixmap());
     });
 
     return a.exec();
