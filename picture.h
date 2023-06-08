@@ -13,7 +13,9 @@ class Picture
 {
 private:
     QString AsciiIm;    //proměná pro uložení onrazku ve formátu ASCII
-    QImage im;        //proměná pro uložení obrazku
+    QImage im;          //proměná pro zmenšeného uložení obrazku
+    QImage imFull;      //proměná pro uložení obrázku v plné velikosti
+
 
     QString asciiChar = " .,:+!ilwW@"; //znaky pro ASCII art;
     int ImWidth;

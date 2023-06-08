@@ -8,11 +8,10 @@ Picture::Picture(QImage im)
 Picture::Picture(){}
 
 void Picture::SetIm(QString path){
-    this->im.load(path);
-    this->im = addBackground(this->im);
-    //this->im = this->im.convertToFormat(QImage::Format_ARGB4444_Premultiplied);
-    this->scale = 5;
-    this->im = this->im.scaledToHeight(180);
+    this->imFull.load(path);
+    this->imFull = addBackground(this->im);
+
+    this->im = this->imFull.scaledToHeight(180);
     this->ImWidth = this->im.width();
     this->ImHeight = this->im.height();
 }
