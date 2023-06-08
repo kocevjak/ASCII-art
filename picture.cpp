@@ -9,7 +9,7 @@ Picture::Picture(){}
 
 void Picture::SetIm(QString path){
     this->im.load(path);
-    this->scale = 4;
+    this->scale = 5;
     this->ImWidth = this->im.width()/scale;
     this->ImHeight = this->im.height()/scale;
 }
