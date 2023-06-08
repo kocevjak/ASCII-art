@@ -5,6 +5,7 @@
 #include <QPixmap>
 #include <QString>
 #include <QColor>
+#include <QFont>
 
 
 class Picture
@@ -13,7 +14,7 @@ private:
     QString AsciiIm;    //proměná pro uložení onrazku ve formátu ASCII
     QImage im;        //proměná pro uložení obrazku
 
-    QString asciiChars = "  .,:ilwW@@"; //znaky pro ASCII art;
+    QString asciiChar = "  .,:ilwW@@"; //znaky pro ASCII art;
     int ImWidth;
     int ImHeight;
 public:
