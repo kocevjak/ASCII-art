@@ -18,6 +18,13 @@ QPixmap Picture::getPixmap(){
 }
 
 QString Picture::getAsciiIm(){
-    QColor color(this->im.pixel(0,0));
+    QString out;
+    QColor color;
+    for (int i = 0; i < this->ImWidth; ++i) {
+        for (int j = 0; j < this->ImHeight; ++j) {
+            color.setRgb(im.pixel(i,j));
+
+        }
+    }
     return color.name();
 }

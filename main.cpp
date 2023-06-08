@@ -72,6 +72,7 @@ int main(int argc, char *argv[])
         QString FilePaths = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image files (*jpg *png");
         data.SetIm(FilePaths);
         picture_jpg.setPixmap(data.getPixmap());
+        picture_ascii.setText(data.getAsciiIm());
     });
 
     return a.exec();
