@@ -1,9 +1,10 @@
 #ifndef PICTURE_H
 #define PICTURE_H
 
-#include <QImage>>
+#include <QImage>
 #include <QPixmap>
 #include <QString>
+#include <QColor>
 
 
 class Picture

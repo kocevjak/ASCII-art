@@ -18,5 +18,6 @@ QPixmap Picture::getPixmap(){
 }
 
 QString Picture::getAsciiIm(){
-    //this->im.
+    QColor color(this->im.pixel(0,0));
+    return color.name();
 }
