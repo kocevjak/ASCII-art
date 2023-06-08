@@ -6,7 +6,7 @@
 #include <QString>
 
 
-class picture
+class Picture
 {
 private:
     QString AsciiIm;    //proměná pro uložení onrazku ve formátu ASCII
@@ -14,7 +14,10 @@ private:
 
     QString asciiChars = "  .,:ilwW@@"; //znaky pro ASCII art;
 public:
-    picture(QPicture im); //konstruktor
+    Picture(QPicture im); //konstruktor
+    Picture();
+
+    void SetIm(QString path);   //nastavení obrázku
 
     QPixmap getPixmap();    //vrátí QPiaxmap
 

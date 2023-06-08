@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     QWidget w;
+    Picture data();
     w.setWindowTitle("ASCII Art");
 
 
