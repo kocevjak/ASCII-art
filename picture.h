@@ -27,6 +27,9 @@ public:
 
     QString getAsciiIm();   //vrátí ascii obrazek
 
+    int getWidth();
+    int getHeight();
+
 };
 
 #endif // PICTURE_H

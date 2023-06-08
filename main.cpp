@@ -10,6 +10,8 @@
 #include <QImage>
 #include <QRgb>
 #include <QColor>
+#include <QFont>
+#include <QFontInfo>
 
 #include "picture.h"
 
@@ -46,7 +48,12 @@ int main(int argc, char *argv[])
 
     //proměná pro výsledný obrázek
     QLabel picture_ascii;
-    picture_ascii.setText("asdasd");
+    picture_ascii.setMinimumHeight(300);
+    picture_ascii.setMinimumWidth(400);
+    QFont font("Monospace");
+    font.setStyleHint(QFont::Monospace);
+    font.setFixedPitch(true);
+    picture_ascii.setFont(font);
 
 
     content.addWidget(&picture_jpg);
@@ -72,6 +79,8 @@ int main(int argc, char *argv[])
         QString FilePaths = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image files (*jpg *png");
         data.SetIm(FilePaths);
         picture_jpg.setPixmap(data.getPixmap());
+        font.setPixelSize(picture_jpg.height()/data.getHeight());
+        picture_ascii.setFont(font);
         picture_ascii.setText(data.getAsciiIm());
     });
 
