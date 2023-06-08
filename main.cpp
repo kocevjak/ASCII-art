@@ -77,12 +77,16 @@ int main(int argc, char *argv[])
 
     QObject::connect(&open_foto, &QPushButton::clicked,[&](){
         QString FilePaths = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image file (*jpg *png");
-        data.SetIm(FilePaths);
-        picture_jpg.setPixmap(data.getPixmap());
-        font.setPixelSize(picture_jpg.height()/data.getHeight());
-        picture_ascii.setFont(font);
-        picture_ascii.setText(data.getAsciiIm());
+        if(FilePaths.size() > 0){
+            data.SetIm(FilePaths);
+            picture_jpg.setPixmap(data.getPixmap());
+            font.setPixelSize(picture_jpg.height()/data.getHeight());
+            picture_ascii.setFont(font);
+            picture_ascii.setText(data.getAsciiIm());
+        }
     });
+
+
 
     return a.exec();
 }
