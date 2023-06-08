@@ -13,6 +13,8 @@ private:
     QImage im;        //proměná pro uložení obrazku
 
     QString asciiChars = "  .,:ilwW@@"; //znaky pro ASCII art;
+    int ImWidth;
+    int ImHeight;
 public:
     Picture(QImage im); //konstruktor
     Picture();
