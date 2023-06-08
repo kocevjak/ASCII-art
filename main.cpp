@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
         //pic.
         picture_jpg.setPixmap(QPixmap::fromImage(im));
         color.setRgb(im.pixel(0,0));
-        //picture_ascii.setText(color);
+        picture_ascii.setText(color);
     });
 
     return a.exec();
