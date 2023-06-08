@@ -17,6 +17,7 @@ private:
     QString asciiChar = "  .,:ilwW@@"; //znaky pro ASCII art;
     int ImWidth;
     int ImHeight;
+    int scale = 0;  //proměná kolikrát se zmenší ascii obrazek
 public:
     Picture(QImage im); //konstruktor
     Picture();

@@ -9,8 +9,9 @@ Picture::Picture(){}
 
 void Picture::SetIm(QString path){
     this->im.load(path);
-    this->ImWidth = this->im.width()/4;
-    this->ImHeight = this->im.height()/4;
+    this->scale = 4;
+    this->ImWidth = this->im.width()/scale;
+    this->ImHeight = this->im.height()/scale;
 }
 
 QPixmap Picture::getPixmap(){
@@ -20,14 +21,14 @@ QPixmap Picture::getPixmap(){
 QString Picture::getAsciiIm(){
     QString out;
     QColor color;
-    int index;
-    double charSize = 255/this->asciiChar.size();
-    for (int i = 0; i < this->ImWidth; ++i) {
-        for (int j = 0; j < this->ImHeight; ++j) {
-            color.setRgb(im.pixel(i*10,j*10));
-            index = color.red()/3 + color.green()/3 + color.blue()/3;
-            out.push_back(this->asciiChar[(int)(6)]);
-            out.push_back(this->asciiChar[(int)(6)]);
+    double index;
+    double charSize = 255/11;
+    for (int i = 0; i < this->ImHeight; ++i) {
+        for (int j = 0; j < this->ImWidth; ++j) {
+            color.setRgb(im.pixel(j*scale,i*scale));
+            index = ((color.red()/3 + color.green()/3 + color.blue()/3)-3)/charSize;
+            out.push_back(this->asciiChar[(int)(index)]);
+            out.push_back(this->asciiChar[(int)(index)]);
         }
         out.push_back("\n");
     }
