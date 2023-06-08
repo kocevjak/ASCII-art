@@ -14,7 +14,7 @@ private:
     QString AsciiIm;    //proměná pro uložení onrazku ve formátu ASCII
     QImage im;        //proměná pro uložení obrazku
 
-    QString asciiChar = "  .,:ilwW@@"; //znaky pro ASCII art;
+    QString asciiChar = " .,:+!ilwW@"; //znaky pro ASCII art;
     int ImWidth;
     int ImHeight;
     int scale = 0;  //proměná kolikrát se zmenší ascii obrazek
