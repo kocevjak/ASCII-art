@@ -7,9 +7,11 @@
 class picture
 {
 private:
-    QPicture im;
+
 public:
     picture(QPicture im);
+
+    QPicture im;//proměná pro uložení obrazku
 };
 
 #endif // PICTURE_H
