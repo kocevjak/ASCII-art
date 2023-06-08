@@ -18,6 +18,8 @@ private:
     int ImWidth;
     int ImHeight;
     int scale = 0;  //proměná kolikrát se zmenší ascii obrazek
+
+    void addBackground();   //funkce slouží k přidání pozadí například do PNG obrázku
 public:
     Picture(QImage im); //konstruktor
     Picture();
