@@ -1,6 +1,6 @@
 #include "picture.h"
 
-picture::picture()
+picture::picture(QPicture im)
 {
-
+    this->im = im;
 }
