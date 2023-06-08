@@ -81,7 +81,6 @@ int main(int argc, char *argv[])
             data.SetIm(FilePaths);
             picture_jpg.setPixmap(data.getPixmap());
             font.setPixelSize(picture_jpg.height()/data.getHeight());
-            font.setFixedPitch(true);
             font.setStretch(100);
             picture_ascii.setFont(font);
             picture_ascii.setText(data.getAsciiIm());
