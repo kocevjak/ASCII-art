@@ -37,6 +37,9 @@ QString Picture::getAsciiIm(){
     return out;
 }
 
+QImage Picture::addBackground(const QImage &im){
+
+}
 
 int Picture::getWidth(){
     return this->ImWidth;
