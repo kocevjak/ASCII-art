@@ -12,6 +12,7 @@
 #include <QColor>
 #include <QFont>
 #include <QFontInfo>
+#include <QResizeEvent>
 
 #include "picture.h"
 
@@ -21,6 +22,7 @@ int main(int argc, char *argv[])
     QWidget w;
     Picture data;
     w.setWindowTitle("ASCII Art");
+    w.setWindowState(Qt::WindowMaximized);
 
 
     QVBoxLayout layout;
@@ -36,13 +38,15 @@ int main(int argc, char *argv[])
     QPushButton save_photo("save picture");
     save_photo.setFixedWidth(100);
 
-    QPixmap pic(900,700);
+    QPixmap pic(600,500);
 
     //proměná pro náhled obrázku
     QLabel picture_jpg;
     picture_jpg.setStyleSheet("border: 1px solid black");
-    picture_jpg.setMinimumWidth(400);
-    picture_jpg.setMinimumHeight(300);
+    //picture_jpg.setFixedSize(w.frameSize());
+    //picture_jpg.setFixedWidth(w.width());
+    picture_jpg.setMinimumWidth(300);
+    picture_jpg.setMinimumHeight(400);
     picture_jpg.setPixmap(pic.scaled(pic.height(),pic.width(), Qt::KeepAspectRatio));
     picture_jpg.setAlignment(Qt::AlignHCenter);
 
@@ -50,6 +54,7 @@ int main(int argc, char *argv[])
     QLabel picture_ascii;
     picture_ascii.setMinimumHeight(300);
     picture_ascii.setMinimumWidth(400);
+    //picture_ascii.setNum(w.width());
     QFont font("Monospace");
     font.setStyleHint(QFont::Monospace);
     font.setFixedPitch(true);
@@ -69,11 +74,9 @@ int main(int argc, char *argv[])
     layout.setAlignment(Qt::AlignTop);
 
     w.setLayout(&layout);
-
-
-    w.setWindowState(Qt::WindowMaximized);
-
+    //w.window()->showMaximized();
     w.show();
+
 
     QObject::connect(&open_foto, &QPushButton::clicked,[&](){
         QString FilePaths = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image file (*jpg *png");
@@ -81,12 +84,11 @@ int main(int argc, char *argv[])
             data.SetIm(FilePaths);
             picture_jpg.setPixmap(data.getPixmap());
             font.setPixelSize(picture_jpg.height()/data.getHeight());
-            font.setStretch(100);
+            font.setStretch(50);
             picture_ascii.setFont(font);
             picture_ascii.setText(data.getAsciiIm());
         }
     });
-
 
 
     return a.exec();

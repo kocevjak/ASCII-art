@@ -12,7 +12,7 @@ void Picture::SetIm(QString path){
     this->im = addBackground(this->im);
     this->imSmall = this->im;
 
-    this->imSmall = this->imSmall.scaledToHeight(180);
+    this->imSmall = this->imSmall.scaledToHeight(190);
 
     this->ImWidth = this->imSmall.width();
     this->ImHeight = this->imSmall.height();
@@ -31,6 +31,7 @@ QString Picture::getAsciiIm(){
         for (int j = 0; j < this->ImWidth; ++j) {
             color.setRgb(imSmall.pixel(j,i));
             index = (255-(color.red()/3 + color.green()/3 + color.blue()/3)-3)/charSize;
+            out.push_back(this->asciiChar[(int)(index)]);
             out.push_back(this->asciiChar[(int)(index)]);
             out.push_back(this->asciiChar[(int)(index)]);
         }
