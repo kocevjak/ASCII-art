@@ -13,8 +13,25 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>124</x>
+         <y>110</y>
+         <width>101</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="layout"/>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
@@ -24,26 +41,41 @@
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menufile">
+   <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>file</string>
+     <string>File</string>
     </property>
+    <widget class="QMenu" name="menuSave_as_2">
+     <property name="title">
+      <string>Save as</string>
+     </property>
+     <addaction name="actionImage"/>
+     <addaction name="actionText"/>
+     <addaction name="actionboth"/>
+    </widget>
+    <addaction name="actionOpen"/>
+    <addaction name="menuSave_as_2"/>
    </widget>
-   <addaction name="menufile"/>
+   <addaction name="menuFile"/>
   </widget>
-  <action name="actionsdds">
+  <action name="actionOpen">
    <property name="text">
-    <string>sdds</string>
+    <string>Open</string>
    </property>
   </action>
-  <action name="actionopen">
+  <action name="actionImage">
    <property name="text">
-    <string>open</string>
+    <string>Image</string>
    </property>
   </action>
-  <action name="actionsava">
+  <action name="actionText">
    <property name="text">
-    <string>sava</string>
+    <string>Text</string>
+   </property>
+  </action>
+  <action name="actionboth">
+   <property name="text">
+    <string>both</string>
    </property>
   </action>
  </widget>
