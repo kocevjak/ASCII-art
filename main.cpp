@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     QWidget w;
-    MainWindow m(&w);
+    MainWindow m;
     Picture data;
 
     w.setWindowTitle("ASCII Art");
@@ -95,9 +95,9 @@ int main(int argc, char *argv[])
         }
     });
 
-    w.showMaximized();
-    m.show();
-    picture_jpg.setFixedWidth(w.width()/2);
+    //w.showMaximized();
+    m.showMaximized();
+    //picture_jpg.setFixedWidth(w.width()/2);
 
     return a.exec();
 }
