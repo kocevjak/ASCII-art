@@ -8,6 +8,7 @@
 #include <QFont>
 #include <QLabel>
 #include <QPainter>
+#include <QChar>
 
 class Picture
 {
@@ -17,7 +18,7 @@ private:
     QImage im;      //proměná pro uložení obrázku v plné velikosti
 
 
-    QString asciiChar = " .,:+!ilwW@"; //znaky pro ASCII art;
+    QString asciiChar = " `'.,^:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"; //znaky pro ASCII art;
     int ImWidth;
     int ImHeight;
     int scale = 0;  //proměná kolikrát se zmenší ascii obrazek
