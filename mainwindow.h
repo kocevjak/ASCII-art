@@ -3,6 +3,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QWidget>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QPixmap>
 
 
 
@@ -17,11 +22,14 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    ~MainWindow();  //konstruktor
 
 
 private:
     Ui::MainWindow *ui;
+
+    QLabel* setPicJpg();    //funkce vrátí label připravený na náhled obrázku
+    QLabel* setPicAscii();  //funkce vrátí label pro ascii obrazek
 };
 
 #endif // MAINWINDOW_H

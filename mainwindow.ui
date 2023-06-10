@@ -20,13 +20,17 @@
       <widget class="QWidget" name="verticalLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>124</x>
-         <y>110</y>
-         <width>101</width>
-         <height>391</height>
+         <x>24</x>
+         <y>60</y>
+         <width>701</width>
+         <height>441</height>
         </rect>
        </property>
-       <layout class="QVBoxLayout" name="layout"/>
+       <layout class="QVBoxLayout" name="layout">
+        <item>
+         <layout class="QHBoxLayout" name="picture"/>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
