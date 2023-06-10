@@ -8,6 +8,7 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QPixmap>
+#include <QFont>
 
 
 

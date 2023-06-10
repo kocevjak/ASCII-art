@@ -15,7 +15,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     QLabel *pic_jpg = setPicJpg();
 
+    QLabel *pic_Ascii = setPicAscii();
+
+    this->ui->picture->addSpacing(10);
+    this->ui->picture->setAlignment(Qt::AlignTop);
+
     this->ui->picture->addWidget(pic_jpg);
+    this->ui->picture->addWidget(pic_Ascii);
+
+    this->ui->layout->addSpacing(50);
+    this->ui->layout->addLayout(this->ui->picture);
 
     this->ui->widget->setLayout(this->ui->layout);
 }
@@ -32,4 +41,7 @@ QLabel* MainWindow::setPicJpg(){
     return pic;
 }
 
-
+QLabel* MainWindow::setPicAscii(){
+    QLabel *pic = new QLabel();
+    return pic;
+}
