@@ -82,6 +82,7 @@ int main(int argc, char *argv[])
 
 
 
+
     QObject::connect(&open_foto, &QPushButton::clicked,[&](){
         QString FilePaths = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image file (*jpg *png");
         if(FilePaths.size() > 0){
