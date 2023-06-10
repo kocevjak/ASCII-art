@@ -13,14 +13,18 @@
 #include <QFont>
 #include <QFontInfo>
 #include <QResizeEvent>
+#include <QMainWindow>
 
+#include "mainwindow.h"
 #include "picture.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     QWidget w;
+    MainWindow m(&w);
     Picture data;
+
     w.setWindowTitle("ASCII Art");
     w.setWindowState(Qt::WindowMaximized);
 
@@ -52,8 +56,8 @@ int main(int argc, char *argv[])
 
     //proměná pro výsledný obrázek
     QLabel picture_ascii;
-    picture_ascii.setMinimumHeight(300);
-    picture_ascii.setMinimumWidth(400);
+    //picture_ascii.setMinimumHeight(300);
+    //picture_ascii.setMinimumWidth(400);
     //picture_ascii.setNum(w.width());
     QFont font("Monospace");
     font.setStyleHint(QFont::Monospace);
@@ -74,15 +78,15 @@ int main(int argc, char *argv[])
     layout.setAlignment(Qt::AlignTop);
 
     w.setLayout(&layout);
-    //w.window()->showMaximized();
-    w.show();
+
+
 
 
     QObject::connect(&open_foto, &QPushButton::clicked,[&](){
         QString FilePaths = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image file (*jpg *png");
         if(FilePaths.size() > 0){
             data.SetIm(FilePaths);
-            picture_jpg.setPixmap(data.getPixmap());
+            picture_jpg.setPixmap(data.getPixmap().scaledToWidth(picture_ascii.width()));
             font.setPixelSize(picture_jpg.height()/data.getHeight());
             font.setStretch(50);
             picture_ascii.setFont(font);
@@ -90,6 +94,9 @@ int main(int argc, char *argv[])
         }
     });
 
+    w.showMaximized();
+    m.show();
+    picture_jpg.setFixedWidth(w.width()/2);
 
     return a.exec();
 }
