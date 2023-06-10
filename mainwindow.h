@@ -6,9 +6,11 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QPixmap>
 #include <QFont>
+#include <QSpacerItem>
 
 
 

@@ -26,11 +26,7 @@
          <height>441</height>
         </rect>
        </property>
-       <layout class="QVBoxLayout" name="layout">
-        <item>
-         <layout class="QHBoxLayout" name="picture"/>
-        </item>
-       </layout>
+       <layout class="QVBoxLayout" name="layout"/>
       </widget>
      </widget>
     </item>
