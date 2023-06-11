@@ -9,12 +9,12 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPixmap>
-#include <QFont>
+//#include <QFont>
 #include <QSpacerItem>
 #include <QString>
 #include <QFileDialog>
 
-#include "picture.h"
+//#include <picture.h>
 
 
 QT_BEGIN_NAMESPACE
@@ -30,9 +30,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();  //konstruktor
 
-    QLabel* pic_jpg = new QLabel();
-    QLabel* pic_Ascii = new QLabel();
-
 
 private slots:
     void on_actionOpen_triggered();
@@ -40,18 +37,19 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    //Picture data;
-    //QFont font;
+    //Picture *data = new Picture();
+    QFont *font;
 
     //function
     QLabel* setPicJpg();    //funkce vrátí label připravený na náhled obrázku
     QLabel* setPicAscii();  //funkce vrátí label pro ascii obrazek
 
     //layout
-    //QHBoxLayout *picture = new QHBoxLayout();
+    //QHBoxLayout* picture;
 
     //widget
-
+    QLabel* pic_jpg;
+    QLabel* pic_Ascii;
 };
 
 #endif // MAINWINDOW_H

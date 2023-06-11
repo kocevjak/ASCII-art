@@ -16,14 +16,14 @@
 #include <QMainWindow>
 
 #include "mainwindow.h"
-#include "picture.h"
+
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QWidget w;
+    //QWidget w;
     MainWindow m;
-    Picture data;
+    //Picture data;
 
     /*w.setWindowTitle("ASCII Art");
     w.setWindowState(Qt::WindowMaximized);
