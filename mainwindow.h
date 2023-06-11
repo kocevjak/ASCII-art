@@ -14,7 +14,7 @@
 #include <QString>
 #include <QFileDialog>
 
-//#include <picture.h>
+#include "picture.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -37,8 +37,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    //Picture *data = new Picture();
-    QFont *font;
+    //void* data;
+    //QFont *font;
 
     //function
     QLabel* setPicJpg();    //funkce vrátí label připravený na náhled obrázku
