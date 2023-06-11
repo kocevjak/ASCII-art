@@ -11,12 +11,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setCentralWidget(this->ui->widget);
-
     QHBoxLayout *picture = new QHBoxLayout();
 
-    QLabel *pic_jpg = setPicJpg();
 
-    QLabel *pic_Ascii = setPicAscii();
+    //QLabel *pic_jpg;
+    //QLabel *pic_Ascii;
+
+    //this->picture = new QHBoxLayout();
+
+    pic_jpg = setPicJpg();
+
+    pic_Ascii = setPicAscii();
 
     picture->setAlignment(Qt::AlignTop);
     picture->addSpacing(10);
@@ -56,12 +61,12 @@ void MainWindow::on_actionOpen_triggered()
 {
     QString FilePath = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image file (*jpg *png");
     if(FilePath.size() > 0){
-        data.SetIm(FilePath);
-        picture_jpg.setPixmap(data.getPixmap().scaledToWidth(picture_ascii.width()));
-        font.setPixelSize(picture_jpg.height()/data.getHeight());
-        font.setStretch(50);
-        picture_ascii.setFont(font);
-        picture_ascii.setText(data.getAsciiIm());
+        //data.SetIm(FilePath);
+        //this->pic_jpg->setPixmap(data.getPixmap());
+        //this->font.setPixelSize(this->pic_jpg->height()/data.getHeight());
+        //this->font.setStretch(50);
+        //this->pic_Ascii->setFont(font);
+        //this->pic_Ascii->setText(data.getAsciiIm());
     }
 }
 

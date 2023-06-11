@@ -30,6 +30,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();  //konstruktor
 
+    QLabel* pic_jpg = new QLabel();
+    QLabel* pic_Ascii = new QLabel();
+
 
 private slots:
     void on_actionOpen_triggered();
@@ -37,16 +40,18 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    Picture data;
+    //Picture data;
+    //QFont font;
 
     //function
     QLabel* setPicJpg();    //funkce vrátí label připravený na náhled obrázku
     QLabel* setPicAscii();  //funkce vrátí label pro ascii obrazek
 
     //layout
+    //QHBoxLayout *picture = new QHBoxLayout();
 
+    //widget
 
-    //layout
 };
 
 #endif // MAINWINDOW_H
