@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     MainWindow m;
     Picture data;
 
-    w.setWindowTitle("ASCII Art");
+    /*w.setWindowTitle("ASCII Art");
     w.setWindowState(Qt::WindowMaximized);
 
 
@@ -95,8 +95,8 @@ int main(int argc, char *argv[])
         }
     });
 
-    //w.showMaximized();
-    m.showMaximized();
+    //w.showMaximized();*/
+    m.show();
     //picture_jpg.setFixedWidth(w.width()/2);
 
     return a.exec();
