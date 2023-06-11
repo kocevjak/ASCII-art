@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
     });
 
     //w.showMaximized();*/
-    m.show();
+    m.showMaximized();
     //picture_jpg.setFixedWidth(w.width()/2);
 
     return a.exec();
