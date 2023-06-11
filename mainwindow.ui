@@ -59,6 +59,9 @@
    <addaction name="menuFile"/>
   </widget>
   <action name="actionOpen">
+   <property name="icon">
+    <iconset theme="document-open"/>
+   </property>
    <property name="text">
     <string>Open</string>
    </property>

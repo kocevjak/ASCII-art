@@ -11,7 +11,10 @@
 #include <QPixmap>
 #include <QFont>
 #include <QSpacerItem>
+#include <QString>
+#include <QFileDialog>
 
+#include "picture.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -28,13 +31,22 @@ public:
     ~MainWindow();  //konstruktor
 
 
+private slots:
+    void on_actionOpen_triggered();
+
 private:
     Ui::MainWindow *ui;
 
+    Picture data;
 
-
+    //function
     QLabel* setPicJpg();    //funkce vrátí label připravený na náhled obrázku
     QLabel* setPicAscii();  //funkce vrátí label pro ascii obrazek
+
+    //layout
+
+
+    //layout
 };
 
 #endif // MAINWINDOW_H

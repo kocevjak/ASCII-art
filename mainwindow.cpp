@@ -51,3 +51,17 @@ QLabel* MainWindow::setPicAscii(){
     pic->setStyleSheet("border: 1px solid black");
     return pic;
 }
+
+void MainWindow::on_actionOpen_triggered()
+{
+    QString FilePath = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image file (*jpg *png");
+    if(FilePath.size() > 0){
+        data.SetIm(FilePath);
+        picture_jpg.setPixmap(data.getPixmap().scaledToWidth(picture_ascii.width()));
+        font.setPixelSize(picture_jpg.height()/data.getHeight());
+        font.setStretch(50);
+        picture_ascii.setFont(font);
+        picture_ascii.setText(data.getAsciiIm());
+    }
+}
+
