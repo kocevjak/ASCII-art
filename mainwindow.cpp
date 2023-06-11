@@ -14,17 +14,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     QHBoxLayout *picture = new QHBoxLayout();
 
-
-
     QLabel *pic_jpg = setPicJpg();
 
     QLabel *pic_Ascii = setPicAscii();
 
-    picture->addSpacing(10);
     picture->setAlignment(Qt::AlignTop);
-
+    picture->addSpacing(10);
     picture->addWidget(pic_jpg);
+    picture->addSpacing(5);
     picture->addWidget(pic_Ascii);
+    picture->addSpacing(10);
 
     this->ui->layout->addSpacing(10);
     this->ui->layout->addLayout(picture);
@@ -40,11 +39,15 @@ MainWindow::~MainWindow()
 QLabel* MainWindow::setPicJpg(){
     QPixmap p(800,600);
     QLabel *pic = new QLabel();
+    pic->setAlignment(Qt::AlignHCenter);
     pic->setPixmap(p);
+    pic->setStyleSheet("border: 1px solid black");
+    //pic->setFixedWidth(this->ui->widget->width();
     return pic;
 }
 
 QLabel* MainWindow::setPicAscii(){
     QLabel *pic = new QLabel();
+    pic->setStyleSheet("border: 1px solid black");
     return pic;
 }

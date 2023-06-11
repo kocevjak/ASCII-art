@@ -31,6 +31,8 @@ public:
 private:
     Ui::MainWindow *ui;
 
+
+
     QLabel* setPicJpg();    //funkce vrátí label připravený na náhled obrázku
     QLabel* setPicAscii();  //funkce vrátí label pro ascii obrazek
 };
