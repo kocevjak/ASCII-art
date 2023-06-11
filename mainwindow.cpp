@@ -20,13 +20,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     QLabel *pic_Ascii = setPicAscii();
 
-    picture->addSpacerItem(space);
+    picture->addSpacing(10);
     picture->setAlignment(Qt::AlignTop);
 
     picture->addWidget(pic_jpg);
     picture->addWidget(pic_Ascii);
 
-    this->ui->layout->addSpacerItem(space);
+    this->ui->layout->addSpacing(10);
     this->ui->layout->addLayout(picture);
 
     this->ui->widget->setLayout(this->ui->layout);

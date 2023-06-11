@@ -30,7 +30,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QSpacerItem *space = new QSpacerItem(1,1, QSizePolicy::Expanding, QSizePolicy::Fixed);
 
     QLabel* setPicJpg();    //funkce vrátí label připravený na náhled obrázku
     QLabel* setPicAscii();  //funkce vrátí label pro ascii obrazek
