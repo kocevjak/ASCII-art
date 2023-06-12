@@ -13,6 +13,7 @@
 #include <QSpacerItem>
 #include <QString>
 #include <QFileDialog>
+#include <QBoxLayout>
 
 #include "picture.h"
 
@@ -46,7 +47,7 @@ private:
     void setAsciiFont();    //nastaveví font pro zobrazení ascii obrázku
 
     //layout
-    //QHBoxLayout* picture;
+    QHBoxLayout *picture;
 
     //widget
     QLabel* pic_jpg;

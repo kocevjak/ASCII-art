@@ -10,31 +10,33 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
     this->setCentralWidget(this->ui->widget);
-    QHBoxLayout *picture = new QHBoxLayout();
-
 
     //QLabel *pic_jpg;
     //QLabel *pic_Ascii;
 
-    //this->picture = new QHBoxLayout();
+    this->picture = new QHBoxLayout();
+    //this->picture->setAlignment()
 
     pic_jpg = setPicJpg();
 
     pic_Ascii = setPicAscii();
 
-    picture->setAlignment(Qt::AlignTop);
-    picture->addSpacing(10);
-    picture->addWidget(pic_jpg);
-    picture->addSpacing(5);
-    picture->addWidget(pic_Ascii);
-    picture->addSpacing(10);
+    this->picture->setAlignment(Qt::AlignTop);
+    this->picture->addSpacing(10);
+    this->picture->addWidget(pic_jpg);
+    this->picture->addSpacing(5);
+    this->picture->addWidget(pic_Ascii);
+    this->picture->addSpacing(10);
 
     this->ui->layout->addSpacing(10);
-    this->ui->layout->addLayout(picture);
+    //this->ui->layout->addLayout(picture);
 
     this->ui->widget->setLayout(this->ui->layout);
+
+
 }
 
 MainWindow::~MainWindow()
