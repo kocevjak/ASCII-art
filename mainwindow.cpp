@@ -64,11 +64,17 @@ void MainWindow::on_actionOpen_triggered()
     //Picture *data = new Picture();
     if(FilePath.size() > 0){
         this->data->SetIm(FilePath);
-        this->pic_jpg->setPixmap(data->getPixmap());
-        this->font->setPixelSize(this->pic_jpg->height()/data->getHeight());
-        this->font->setStretch(50);
-        this->pic_Ascii->setFont(*font);
-        this->pic_Ascii->setText(data->getAsciiIm());
+        this->pic_jpg->setPixmap(this->data->getPixmap());
+        setAsciiFont();
+        this->pic_Ascii->setFont(*this->AsciiFont);
+        this->pic_Ascii->setText(this->data->getAsciiIm());
     }
+}
+
+void MainWindow::setAsciiFont(){
+    this->AsciiFont->setPixelSize(this->pic_jpg->height()/data->getHeight());
+    this->AsciiFont->setStretch(50);
+    this->AsciiFont->setStyleHint(QFont::Monospace);
+    this->AsciiFont->setFixedPitch(true);
 }
 

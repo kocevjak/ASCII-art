@@ -38,7 +38,7 @@ private:
     Ui::MainWindow *ui;
 
     Picture* data = new Picture();
-    QFont *font = new QFont();
+    QFont *AsciiFont = new QFont("Monospace");
 
     //function
     QLabel* setPicJpg();    //funkce vrátí label připravený na náhled obrázku
