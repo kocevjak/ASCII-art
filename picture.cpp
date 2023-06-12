@@ -8,22 +8,22 @@ Picture::Picture(QImage im)
 Picture::Picture(){}
 
 void Picture::SetIm(QString path){
-    this->im.load(path);
+    /*this->im.load(path);
     this->im = addBackground(this->im);
     this->imSmall = this->im;
 
     this->imSmall = this->imSmall.scaledToHeight(190);
 
     this->ImWidth = this->imSmall.width();
-    this->ImHeight = this->imSmall.height();
+    this->ImHeight = this->imSmall.height();*/
 }
 
 QPixmap Picture::getPixmap(){
-    return QPixmap::fromImage(im);
+    //return QPixmap::fromImage(im);
 }
 
 QString Picture::getAsciiIm(){
-    QString out;
+    /*QString out;
     QColor color;
     double index;
     double charSize = 255/((double)asciiChar.size());
@@ -38,11 +38,11 @@ QString Picture::getAsciiIm(){
         out.push_back("\n");
     }
     //out.setNum(ImWidth);
-    return out;
+    return out;*/
 }
 
 QImage Picture::addBackground(const QImage &im){
-    QImage resultImage(im.size(), QImage::Format_ARGB32);
+    /*QImage resultImage(im.size(), QImage::Format_ARGB32);
     resultImage.fill(Qt::white);
 
     QPainter painter(&resultImage);
@@ -53,7 +53,7 @@ QImage Picture::addBackground(const QImage &im){
 
     painter.end();
 
-    return resultImage;
+    return resultImage;*/
 }
 
 int Picture::getWidth(){

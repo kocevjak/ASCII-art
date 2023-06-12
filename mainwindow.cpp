@@ -61,11 +61,11 @@ QLabel* MainWindow::setPicAscii(){
 void MainWindow::on_actionOpen_triggered()
 {
     QString FilePath = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image file (*jpg *png");
-    Picture *data = new Picture();
+    //Picture *data = new Picture();
     if(FilePath.size() > 0){
-        data->SetIm(FilePath);
-        this->pic_jpg->setPixmap(data->getPixmap());
-        this->data = (void*)data;
+        //this->data->SetIm(FilePath);
+        //this->pic_jpg->setPixmap(data->getPixmap());
+        //this->data = (void*)data;
         //this->font.setPixelSize(this->pic_jpg->height()/data.getHeight());
         //this->font.setStretch(50);
         //this->pic_Ascii->setFont(font);
