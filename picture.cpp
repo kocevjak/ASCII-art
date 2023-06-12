@@ -5,7 +5,13 @@ Picture::Picture(QImage im)
     this->im = im;
 }
 
-Picture::Picture(){}
+Picture::Picture(){
+    this->AsciiIm = "";
+    this->imSmall.load("");
+    this->im.load("");
+    this->ImWidth = -1;
+    this->ImHeight = -1;
+}
 
 void Picture::SetIm(QString path){
     /*this->im.load(path);

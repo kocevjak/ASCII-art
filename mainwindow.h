@@ -37,7 +37,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    //Picture* data = new Picture();
+    Picture* data = new Picture();
     //QFont *font;
 
     //function

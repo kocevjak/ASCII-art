@@ -2,7 +2,7 @@
 
 
 #include "mainwindow.h"
-#include "picture.h"
+//#include "picture.h"
 #include "ui_mainwindow.h"
 
 
@@ -63,7 +63,7 @@ void MainWindow::on_actionOpen_triggered()
     QString FilePath = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image file (*jpg *png");
     //Picture *data = new Picture();
     if(FilePath.size() > 0){
-        //this->data->SetIm(FilePath);
+        this->data->SetIm(FilePath);
         //this->pic_jpg->setPixmap(data->getPixmap());
         //this->data = (void*)data;
         //this->font.setPixelSize(this->pic_jpg->height()/data.getHeight());
