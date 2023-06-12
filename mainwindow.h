@@ -38,11 +38,12 @@ private:
     Ui::MainWindow *ui;
 
     Picture* data = new Picture();
-    //QFont *font;
+    QFont *font = new QFont();
 
     //function
     QLabel* setPicJpg();    //funkce vrátí label připravený na náhled obrázku
     QLabel* setPicAscii();  //funkce vrátí label pro ascii obrazek
+    void setAsciiFont();    //nastaveví font pro zobrazení ascii obrázku
 
     //layout
     //QHBoxLayout* picture;
