@@ -62,7 +62,7 @@ QLabel* MainWindow::setPicAscii(){
 
 void MainWindow::on_actionOpen_triggered()
 {
-    QString FilePath = QFileDialog::getOpenFileName(nullptr, "Open Image", "", tr("Image file (*jpg *png"));
+    QString FilePath = QFileDialog::getOpenFileName(nullptr, tr("Open Image"), "", tr("Image file (*.jpg *.png)"));
     if(FilePath.size() > 0){
         this->data->SetIm(FilePath);
         this->pic_jpg->setPixmap(this->data->getPixmap());
