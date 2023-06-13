@@ -91,7 +91,13 @@ void MainWindow::on_actionImage_triggered()
 {
     QPixmap pic;
     pic = this->pic_Ascii->grab();
-    QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),"ASCII art",tr("(*.jpg)"));
-    pic.save(path);
+    QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),
+                                                "ASCII art",
+                                                "jpg (*.jpg);"
+                                                ";png (*.png);");
+    if(path.size() > 0){
+        pic.save(path);
+    }
+
 }
 

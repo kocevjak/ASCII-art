@@ -49,7 +49,8 @@ private:
     QLabel* setPicAscii();  //funkce vrátí label pro ascii obrazek
     void setAsciiFont();    //nastaveví font pro zobrazení ascii obrázku
 
-    //layout
+    //message box
+
 
 
     //widget
