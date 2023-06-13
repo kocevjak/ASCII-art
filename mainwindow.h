@@ -14,6 +14,7 @@
 #include <QString>
 #include <QFileDialog>
 #include <QBoxLayout>
+#include <QMessageBox>
 
 #include "picture.h"
 

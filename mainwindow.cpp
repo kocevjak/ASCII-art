@@ -82,6 +82,9 @@ void MainWindow::on_actionOpen_triggered()
 
 void MainWindow::on_actionImage_triggered()
 {
-    this->pic_jpg->setPixmap(this->pic_Ascii->pixmap());
+    QPixmap pic;
+    pic = this->pic_Ascii->grab();
+    QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),"");
+    pic.save(path);
 }
 
