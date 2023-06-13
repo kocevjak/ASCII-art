@@ -61,6 +61,13 @@ QLabel* MainWindow::setPicAscii(){
     return pic;
 }
 
+void MainWindow::setAsciiFont(){
+    this->AsciiFont->setPixelSize(this->pic_jpg->height()/data->getHeight());
+    this->AsciiFont->setStretch(50);
+    this->AsciiFont->setStyleHint(QFont::Monospace);
+    this->AsciiFont->setFixedPitch(true);
+}
+
 void MainWindow::on_actionOpen_triggered()
 {
     QString FilePath = QFileDialog::getOpenFileName(nullptr, tr("Open Image"), "", tr("Image file (*.jpg *.png)"));
@@ -73,10 +80,8 @@ void MainWindow::on_actionOpen_triggered()
     }
 }
 
-void MainWindow::setAsciiFont(){
-    this->AsciiFont->setPixelSize(this->pic_jpg->height()/data->getHeight());
-    this->AsciiFont->setStretch(50);
-    this->AsciiFont->setStyleHint(QFont::Monospace);
-    this->AsciiFont->setFixedPitch(true);
+void MainWindow::on_actionImage_triggered()
+{
+
 }
 
