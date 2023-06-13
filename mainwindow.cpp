@@ -82,6 +82,6 @@ void MainWindow::on_actionOpen_triggered()
 
 void MainWindow::on_actionImage_triggered()
 {
-
+    this->pic_jpg->setPixmap(this->pic_Ascii->pixmap());
 }
 
