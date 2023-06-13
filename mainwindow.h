@@ -55,6 +55,7 @@ private:
     //widget
     QLabel* pic_jpg;
     QLabel* pic_Ascii;
+    QWidget *pic_ascii_w;
 };
 
 #endif // MAINWINDOW_H

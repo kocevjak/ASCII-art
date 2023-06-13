@@ -18,17 +18,22 @@ MainWindow::MainWindow(QWidget *parent)
     //QLabel *pic_Ascii;
 
     QHBoxLayout *picture = new QHBoxLayout();
+
+    pic_ascii_w = new QWidget();
+    pic_ascii_w->setStyleSheet("border: 1px solid black");
     //this->picture->setAlignment()
 
     pic_jpg = setPicJpg();
 
     pic_Ascii = setPicAscii();
 
+    //pic_ascii_w->setParent(pic_Ascii);
+
     picture->setAlignment(Qt::AlignTop);
     picture->addSpacing(10);
     picture->addWidget(pic_jpg);
     picture->addSpacing(5);
-    picture->addWidget(pic_Ascii);
+    picture->addWidget(pic_ascii_w);
     picture->addSpacing(10);
 
     this->ui->layout->addSpacing(10);
@@ -55,8 +60,9 @@ QLabel* MainWindow::setPicJpg(){
 }
 
 QLabel* MainWindow::setPicAscii(){
-    QLabel *pic = new QLabel();
+    QLabel *pic = new QLabel(this->pic_ascii_w);
     pic->setStyleSheet("border: 1px solid black");
+    pic->setFixedSize(0,0);
     //pic->setAlignment(Qt::AlignHCenter);
     return pic;
 }
@@ -77,6 +83,7 @@ void MainWindow::on_actionOpen_triggered()
         setAsciiFont();
         this->pic_Ascii->setFont(*this->AsciiFont);
         this->pic_Ascii->setText(this->data->getAsciiIm());
+        this->pic_Ascii->setFixedSize(this->data->getPixmap().size());
     }
 }
 
@@ -84,7 +91,7 @@ void MainWindow::on_actionImage_triggered()
 {
     QPixmap pic;
     pic = this->pic_Ascii->grab();
-    QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),"");
+    QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),"ASCII art",tr("(*.jpg)"));
     pic.save(path);
 }
 
