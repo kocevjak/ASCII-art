@@ -57,6 +57,7 @@ QLabel* MainWindow::setPicJpg(){
 QLabel* MainWindow::setPicAscii(){
     QLabel *pic = new QLabel();
     pic->setStyleSheet("border: 1px solid black");
+    //pic->setAlignment(Qt::AlignHCenter);
     return pic;
 }
 
