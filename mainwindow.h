@@ -47,7 +47,7 @@ private:
     void setAsciiFont();    //nastaveví font pro zobrazení ascii obrázku
 
     //layout
-    QHBoxLayout *picture;
+
 
     //widget
     QLabel* pic_jpg;

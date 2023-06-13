@@ -17,22 +17,22 @@ MainWindow::MainWindow(QWidget *parent)
     //QLabel *pic_jpg;
     //QLabel *pic_Ascii;
 
-    this->picture = new QHBoxLayout();
+    QHBoxLayout *picture = new QHBoxLayout();
     //this->picture->setAlignment()
 
     pic_jpg = setPicJpg();
 
     pic_Ascii = setPicAscii();
 
-    this->picture->setAlignment(Qt::AlignTop);
-    this->picture->addSpacing(10);
-    this->picture->addWidget(pic_jpg);
-    this->picture->addSpacing(5);
-    this->picture->addWidget(pic_Ascii);
-    this->picture->addSpacing(10);
+    picture->setAlignment(Qt::AlignTop);
+    picture->addSpacing(10);
+    picture->addWidget(pic_jpg);
+    picture->addSpacing(5);
+    picture->addWidget(pic_Ascii);
+    picture->addSpacing(10);
 
     this->ui->layout->addSpacing(10);
-    //this->ui->layout->addLayout(picture);
+    this->ui->layout->addLayout(picture);
 
     this->ui->widget->setLayout(this->ui->layout);
 
@@ -62,8 +62,7 @@ QLabel* MainWindow::setPicAscii(){
 
 void MainWindow::on_actionOpen_triggered()
 {
-    QString FilePath = QFileDialog::getOpenFileName(nullptr, "Open Image", "", "Image file (*jpg *png");
-    //Picture *data = new Picture();
+    QString FilePath = QFileDialog::getOpenFileName(nullptr, "Open Image", "", tr("Image file (*jpg *png"));
     if(FilePath.size() > 0){
         this->data->SetIm(FilePath);
         this->pic_jpg->setPixmap(this->data->getPixmap());
