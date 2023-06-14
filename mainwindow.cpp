@@ -5,29 +5,34 @@
 //#include "picture.h"
 #include "ui_mainwindow.h"
 
-
+//private function
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
 
     ui->setupUi(this);
-    this->setCentralWidget(this->ui->widget);
-
-    //QLabel *pic_jpg;
-    //QLabel *pic_Ascii;
-
-    QHBoxLayout *picture = new QHBoxLayout();
 
     pic_ascii_w = new QWidget();
     pic_ascii_w->setStyleSheet("border: 1px solid black");
-    //this->picture->setAlignment()
 
     pic_jpg = setPicJpg();
-
     pic_Ascii = setPicAscii();
 
-    //pic_ascii_w->setParent(pic_Ascii);
+    this->setLayout();  //nastavení layoutu
+
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::setLayout(){
+    //layout
+    QHBoxLayout *picture = new QHBoxLayout();
+
+    this->setCentralWidget(this->ui->widget);   //nastavení centralWidget
 
     picture->setAlignment(Qt::AlignTop);
     picture->addSpacing(10);
@@ -40,15 +45,9 @@ MainWindow::MainWindow(QWidget *parent)
     this->ui->layout->addLayout(picture);
 
     this->ui->widget->setLayout(this->ui->layout);
-
-
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-
+//public function
 QLabel* MainWindow::setPicJpg(){
     QPixmap p(800,600);
     QLabel *pic = new QLabel();
@@ -67,6 +66,7 @@ QLabel* MainWindow::setPicAscii(){
     return pic;
 }
 
+//private slots
 void MainWindow::setAsciiFont(){
     this->AsciiFont->setPixelSize(this->pic_jpg->height()/data->getHeight());
     this->AsciiFont->setStretch(50);

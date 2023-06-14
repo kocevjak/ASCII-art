@@ -29,8 +29,9 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();  //konstruktor
+    MainWindow(QWidget *parent = nullptr);  //konstruktor
+    ~MainWindow();  //dedtruktor
+    void setLayout();   //funkce pro nastavení layoutu
 
 
 private slots:
