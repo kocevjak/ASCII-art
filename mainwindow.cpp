@@ -106,7 +106,11 @@ void MainWindow::on_actionText_triggered()
     QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),
                                                 "ASCII art",
                                                 "txt (*.txt)");
-
+    QFile file(path);
+    QTextStream out(&file);
+    file.open(QIODevice::WriteOnly);
+    out << this->pic_Ascii->text();
+    file.close();
 }
 
 void MainWindow::on_actionboth_triggered()
