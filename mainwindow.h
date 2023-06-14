@@ -57,7 +57,7 @@ private:
     void setAsciiFont();    //nastaveví font pro zobrazení ascii obrázku
 
     //message box
-
+    QMessageBox *msg_box = new QMessageBox();
 
 
     //widget

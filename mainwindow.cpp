@@ -111,6 +111,7 @@ void MainWindow::on_actionText_triggered()
     file.open(QIODevice::WriteOnly);
     out << this->pic_Ascii->text();
     file.close();
+    this->msg_box->warning(this,"Error","not saved");
 }
 
 void MainWindow::on_actionboth_triggered()
