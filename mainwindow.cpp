@@ -103,6 +103,9 @@ void MainWindow::on_actionImage_triggered()
 
 void MainWindow::on_actionText_triggered()
 {
+    QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),
+                                                "ASCII art",
+                                                "txt (*.txt)");
 
 }
 

@@ -9,12 +9,13 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPixmap>
-//#include <QFont>
+#include <QFont>
 #include <QSpacerItem>
 #include <QString>
 #include <QFileDialog>
 #include <QBoxLayout>
 #include <QMessageBox>
+#include <QFile>
 
 #include "picture.h"
 
