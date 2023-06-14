@@ -101,3 +101,13 @@ void MainWindow::on_actionImage_triggered()
 
 }
 
+void MainWindow::on_actionText_triggered()
+{
+
+}
+
+void MainWindow::on_actionboth_triggered()
+{
+
+}
+

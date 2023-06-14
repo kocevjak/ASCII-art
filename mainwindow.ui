@@ -69,17 +69,17 @@
   </action>
   <action name="actionImage">
    <property name="text">
-    <string>Image</string>
+    <string>Save as image</string>
    </property>
   </action>
   <action name="actionText">
    <property name="text">
-    <string>Text</string>
+    <string>Save as text</string>
    </property>
   </action>
   <action name="actionboth">
    <property name="text">
-    <string>both</string>
+    <string>Save both picture</string>
    </property>
   </action>
  </widget>

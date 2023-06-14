@@ -39,6 +39,10 @@ private slots:
 
     void on_actionImage_triggered();
 
+    void on_actionText_triggered();
+
+    void on_actionboth_triggered();
+
 private:
     Ui::MainWindow *ui;
 
