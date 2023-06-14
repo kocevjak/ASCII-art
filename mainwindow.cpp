@@ -20,7 +20,6 @@ MainWindow::MainWindow(QWidget *parent)
     pic_Ascii = setPicAscii();
 
     this->setLayout();  //nastavení layoutu
-
 }
 
 MainWindow::~MainWindow()
@@ -34,6 +33,7 @@ void MainWindow::setLayout(){
 
     this->setCentralWidget(this->ui->widget);   //nastavení centralWidget
 
+    //nastavení picture
     picture->setAlignment(Qt::AlignTop);
     picture->addSpacing(10);
     picture->addWidget(pic_jpg);
