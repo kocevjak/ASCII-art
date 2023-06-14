@@ -96,9 +96,13 @@ void MainWindow::on_actionImage_triggered()
                                                 "jpg (*.jpg);"
                                                 ";png (*.png);");
     if(path.size() > 0){
-        pic.save(path);
+        if(!pic.save(path)){
+            this->msg_box->critical(this,"error","error with save");
+        }
     }
-
+    else{
+        this->msg_box->critical(this,"error","not open picture");
+    }
 }
 
 void MainWindow::on_actionText_triggered()
@@ -108,10 +112,13 @@ void MainWindow::on_actionText_triggered()
                                                 "txt (*.txt)");
     QFile file(path);
     QTextStream out(&file);
-    file.open(QIODevice::WriteOnly);
-    out << this->pic_Ascii->text();
-    file.close();
-    this->msg_box->warning(this,"Error","not saved");
+    if(file.open(QIODevice::WriteOnly)){
+        out << this->pic_Ascii->text();
+        file.close();
+    }
+    else {
+        this->msg_box->warning(this,"Error","not saved");
+    }
 }
 
 void MainWindow::on_actionboth_triggered()

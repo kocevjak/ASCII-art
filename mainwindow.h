@@ -59,7 +59,6 @@ private:
     //message box
     QMessageBox *msg_box = new QMessageBox();
 
-
     //widget
     QLabel* pic_jpg;
     QLabel* pic_Ascii;
