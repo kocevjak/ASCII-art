@@ -47,7 +47,8 @@ private slots:
 
     void on_actionboth_triggered();
 
-
+    void BrightnessChange();
+    void ContrastChange();
 
 private:
     Ui::MainWindow *ui;
@@ -74,6 +75,10 @@ private:
 
     QLabel *Contrast_l;
     QSlider *Contrast;
+
+    //event
+
+
 };
 
 #endif // MAINWINDOW_H

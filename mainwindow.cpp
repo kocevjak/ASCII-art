@@ -43,6 +43,9 @@ MainWindow::MainWindow(QWidget *parent)
     this->Contrast->setValue(50);
 
     this->setLayout();  //nastavení layoutu
+
+    connect(Brightness,SIGNAL(valueChanged(int)),SLOT(BrightnessChange()));
+    connect(Contrast,SIGNAL(valueChanged(int)),SLOT(ContrastChange()));
 }
 
 MainWindow::~MainWindow()
@@ -181,4 +184,12 @@ void MainWindow::on_actionText_triggered()
 void MainWindow::on_actionboth_triggered()
 {
     this->msg_box->information(this,"error","tato funkce zatím není přístupná");
+}
+
+void MainWindow::BrightnessChange(){
+
+}
+
+void MainWindow::ContrastChange(){
+
 }
