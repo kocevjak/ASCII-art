@@ -23,7 +23,7 @@ void Picture::SetIm(QString path){
     this->im = addBackground(this->im);
     this->imSmall = this->im;
 
-    this->imSmall = this->imSmall.scaledToHeight(180);
+    this->imSmall = this->imSmall.scaledToHeight(190);
 
     this->ImWidth = this->imSmall.width();
     this->ImHeight = this->imSmall.height();
