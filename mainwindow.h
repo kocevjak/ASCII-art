@@ -55,6 +55,7 @@ private:
     QLabel* setPicJpg();    //funkce vrátí label připravený na náhled obrázku
     QLabel* setPicAscii();  //funkce vrátí label pro ascii obrazek
     void setAsciiFont();    //nastaveví font pro zobrazení ascii obrázku
+    void setPictureLayout();
 
     //message box
     QMessageBox *msg_box = new QMessageBox();

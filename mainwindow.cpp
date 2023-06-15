@@ -84,12 +84,17 @@ void MainWindow::on_actionOpen_triggered()
     QString FilePath = QFileDialog::getOpenFileName(nullptr, tr("Open Image"), "", tr("Image file (*.jpg *.png)"));
     if(FilePath.size() > 0){
         this->data->SetIm(FilePath);
-        this->pic_jpg->setPixmap(this->data->getPixmap().scaled(this->pic_jpg->width(),this->pic_jpg->height(),Qt::KeepAspectRatio));
-        setAsciiFont();
-        this->pic_Ascii->setFont(*this->AsciiFont);
-        this->pic_Ascii->setText(this->data->getAsciiIm());
-        this->pic_Ascii->setFixedSize(this->data->getPixmap().scaled(this->pic_jpg->width(),this->pic_jpg->height(),Qt::KeepAspectRatio).size());
+        setPictureLayout();
     }
+}
+
+void MainWindow::setPictureLayout(){
+    data->setScalePixmap(this->pic_jpg->width()-5,this->pic_jpg->height()-5);
+    this->pic_jpg->setPixmap(data->getScalePixmap());
+    setAsciiFont();
+    this->pic_Ascii->setFont(*this->AsciiFont);
+    this->pic_Ascii->setText(this->data->getAsciiIm());
+    this->pic_Ascii->setFixedSize(data->getScalePixmap().size());
 }
 
 void MainWindow::on_actionImage_triggered()
