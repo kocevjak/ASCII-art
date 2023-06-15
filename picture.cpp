@@ -6,6 +6,7 @@ Picture::Picture(QImage im)
 }
 
 Picture::Picture(){
+    this->imScale.load("");
     this->AsciiIm = "";
     this->imSmall.load("");
     this->im.load("");
@@ -62,6 +63,14 @@ QImage Picture::addBackground(const QImage &im){
     painter.end();
 
     return resultImage;
+}
+
+QPixmap Picture::getScalePixmap(){
+    return QPixmap::fromImage(this->imScale);
+}
+
+void Picture::setScalePixmap(int width, int height){
+    this->imScale = im.scaled(width,height,Qt::KeepAspectRatio);
 }
 
 int Picture::getWidth(){
