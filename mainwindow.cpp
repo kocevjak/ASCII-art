@@ -19,12 +19,20 @@ MainWindow::MainWindow(QWidget *parent)
     pic_jpg = setPicJpg();
     pic_Ascii = setPicAscii();
 
-    this->setLayout();  //nastavení layoutu
-
     this->pic_ascii_w->setMinimumSize(this->size()/2);
     this->pic_ascii_w->setMaximumSize(this->size());
     this->pic_jpg->setMinimumSize(this->size()/2);
     this->pic_jpg->setMaximumSize(this->size());
+
+    this->Brightness_l = new QLabel();
+    this->Brightness_l->setText("Brightness");
+    this->Brightness = new QSlider(Qt::Horizontal);
+
+    this->Contrast_l = new QLabel();
+    this->Contrast_l->setText("Contrast");
+    this->Contrast = new QSlider(Qt::Horizontal);
+
+    this->setLayout();  //nastavení layoutu
 }
 
 MainWindow::~MainWindow()
@@ -48,6 +56,11 @@ void MainWindow::setLayout(){
 
     this->ui->layout->addSpacing(10);
     this->ui->layout->addLayout(picture);
+    this->ui->layout->addWidget(this->Brightness_l);
+    this->ui->layout->addWidget(this->Brightness);
+
+    this->ui->layout->addWidget(this->Contrast_l);
+    this->ui->layout->addWidget(this->Contrast);
 
     this->ui->widget->setLayout(this->ui->layout);
 }
