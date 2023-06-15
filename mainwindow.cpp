@@ -90,38 +90,44 @@ void MainWindow::on_actionOpen_triggered()
 void MainWindow::on_actionImage_triggered()
 {
     QPixmap pic;
-    pic = this->pic_Ascii->grab();
-    QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),
-                                                "ASCII art",
-                                                "jpg (*.jpg);"
-                                                ";png (*.png);");
-    if(path.size() > 0){
+
+    if(data->isSetIm){
+        pic = this->pic_Ascii->grab();
+        QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),
+                                                    "ASCII art",
+                                                    "jpg (*.jpg);"
+                                                    ";png (*.png);");
         if(!pic.save(path)){
-            this->msg_box->critical(this,"error","error with save");
+            this->msg_box->critical(this,"Error","error with save");
         }
     }
     else{
-        this->msg_box->critical(this,"error","not open picture");
+        this->msg_box->critical(this,"Error","not open picture");
     }
 }
 
 void MainWindow::on_actionText_triggered()
 {
-    QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),
-                                                "ASCII art",
-                                                "txt (*.txt)");
-    QFile file(path);
-    QTextStream out(&file);
-    if(file.open(QIODevice::WriteOnly)){
-        out << this->pic_Ascii->text();
-        file.close();
+    if(data->isSetIm){
+        QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),
+                                                    "ASCII art",
+                                                    "txt (*.txt)");
+        QFile file(path);
+        QTextStream out(&file);
+        if(file.open(QIODevice::WriteOnly)){
+            out << this->pic_Ascii->text();
+            file.close();
+        }
+        else {
+            this->msg_box->critical(this,"Error","not saved");
+        }
     }
-    else {
-        this->msg_box->warning(this,"Error","not saved");
+    else{
+        this->msg_box->critical(this,"Error","not open picture");
     }
 }
 
 void MainWindow::on_actionboth_triggered()
 {
-
+    this->msg_box->information(this,"error","tato funkce zatím není přístupná");
 }
