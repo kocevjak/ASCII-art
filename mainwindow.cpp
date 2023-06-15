@@ -24,13 +24,23 @@ MainWindow::MainWindow(QWidget *parent)
     this->pic_jpg->setMinimumSize(this->size()/2);
     this->pic_jpg->setMaximumSize(this->size());
 
+    //set Brightness
     this->Brightness_l = new QLabel();
     this->Brightness_l->setText("Brightness");
     this->Brightness = new QSlider(Qt::Horizontal);
+    this->Brightness->setTickPosition(QSlider::TicksAbove);
+    this->Brightness->setMinimum(0);
+    this->Brightness->setMaximum(100);
+    this->Brightness->setValue(50);
 
+    //set contrast
     this->Contrast_l = new QLabel();
     this->Contrast_l->setText("Contrast");
     this->Contrast = new QSlider(Qt::Horizontal);
+    this->Contrast->setTickPosition(QSlider::TicksAbove);
+    this->Contrast->setMinimum(0);
+    this->Contrast->setMaximum(100);
+    this->Contrast->setValue(50);
 
     this->setLayout();  //nastavení layoutu
 }
@@ -44,6 +54,8 @@ void MainWindow::setLayout(){
     //layout
     QHBoxLayout *picture = new QHBoxLayout();
 
+    QVBoxLayout *controls = new QVBoxLayout();
+
     this->setCentralWidget(this->ui->widget);   //nastavení centralWidget
 
     //nastavení picture
@@ -54,13 +66,18 @@ void MainWindow::setLayout(){
     picture->addWidget(pic_ascii_w);
     picture->addSpacing(10);
 
+    controls->addWidget(this->Brightness_l);
+    controls->addWidget(this->Brightness);
+    controls->addWidget(this->Contrast_l);
+    controls->addWidget(this->Contrast);
+    controls->setAlignment(Qt::AlignTop);
+
+    this->layout()->setAlignment(Qt::AlignTop);
+
     this->ui->layout->addSpacing(10);
     this->ui->layout->addLayout(picture);
-    this->ui->layout->addWidget(this->Brightness_l);
-    this->ui->layout->addWidget(this->Brightness);
 
-    this->ui->layout->addWidget(this->Contrast_l);
-    this->ui->layout->addWidget(this->Contrast);
+    this->ui->layout->addLayout(controls);
 
     this->ui->widget->setLayout(this->ui->layout);
 }
