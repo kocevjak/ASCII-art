@@ -13,10 +13,10 @@
 class Picture
 {
 private:
-    QString AsciiIm;    //proměná pro uložení onrazku ve formátu ASCII
+    QString AsciiIm;    //proměná pro uložení obrazku ve formátu ASCII
     QImage imSmall;          //proměná pro uložení zmenšeného obrazku k zobrazení do ASCII
     QImage im;      //proměná pro uložení obrázku v plné velikosti
-    QImage imScale;
+    QImage imScale;     //proměná pro náhled obrázku
 
     QString asciiChar = " `'.,^:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"; //znaky pro ASCII art;
     int ImWidth;
@@ -36,6 +36,8 @@ public:
 
     QPixmap getScalePixmap();   //vrátí zmenšený obrazek
     void setScalePixmap(int width,int height);  //nastaveí zmenšený obrázek
+
+    QPixmap getSmallPixmap();
 
     int getWidth();
     int getHeight();

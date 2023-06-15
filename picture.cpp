@@ -23,7 +23,7 @@ void Picture::SetIm(QString path){
     this->im = addBackground(this->im);
     this->imSmall = this->im;
 
-    this->imSmall = this->imSmall.scaledToHeight(190);
+    this->imSmall = this->imSmall.scaledToHeight(180);
 
     this->ImWidth = this->imSmall.width();
     this->ImHeight = this->imSmall.height();
@@ -50,6 +50,10 @@ QString Picture::getAsciiIm(){
         out.push_back("\n");
     }
     return out;
+}
+
+QPixmap Picture::getSmallPixmap(){
+    return QPixmap::fromImage(this->imSmall);
 }
 
 QImage Picture::addBackground(const QImage &im){

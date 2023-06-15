@@ -73,7 +73,7 @@ QLabel* MainWindow::setPicAscii(){
 
 //private slots
 void MainWindow::setAsciiFont(){
-    this->AsciiFont->setPixelSize(this->pic_jpg->height()/data->getHeight());
+    this->AsciiFont->setPixelSize(this->pic_ascii_w->height()/data->getSmallPixmap().height());
     this->AsciiFont->setStretch(50);
     this->AsciiFont->setStyleHint(QFont::Monospace);
     this->AsciiFont->setFixedPitch(true);
@@ -89,12 +89,20 @@ void MainWindow::on_actionOpen_triggered()
 }
 
 void MainWindow::setPictureLayout(){
-    data->setScalePixmap(this->pic_jpg->width()-5,this->pic_jpg->height()-5);
+    data->setScalePixmap(this->pic_jpg->width(),this->pic_jpg->height());
     this->pic_jpg->setPixmap(data->getScalePixmap());
+
     setAsciiFont();
     this->pic_Ascii->setFont(*this->AsciiFont);
     this->pic_Ascii->setText(this->data->getAsciiIm());
     this->pic_Ascii->setFixedSize(data->getScalePixmap().size());
+
+    if((this->AsciiFont->pixelSize()*data->getSmallPixmap().height()) >= (this->pic_Ascii->height())){
+        this->pic_Ascii->setFixedHeight(this->AsciiFont->pixelSize()*data->getSmallPixmap().height());
+        this->pic_ascii_w->setFixedHeight(this->AsciiFont->pixelSize()*data->getSmallPixmap().height());
+    }
+
+
 }
 
 void MainWindow::on_actionImage_triggered()

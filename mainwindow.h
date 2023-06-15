@@ -17,6 +17,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
+#include <QDebug>
 
 #include "picture.h"
 
