@@ -20,6 +20,11 @@ MainWindow::MainWindow(QWidget *parent)
     pic_Ascii = setPicAscii();
 
     this->setLayout();  //nastavení layoutu
+
+    this->pic_ascii_w->setMinimumSize(this->size()/2);
+    this->pic_ascii_w->setMaximumSize(this->size());
+    this->pic_jpg->setMinimumSize(this->size()/2);
+    this->pic_jpg->setMaximumSize(this->size());
 }
 
 MainWindow::~MainWindow()
@@ -79,11 +84,11 @@ void MainWindow::on_actionOpen_triggered()
     QString FilePath = QFileDialog::getOpenFileName(nullptr, tr("Open Image"), "", tr("Image file (*.jpg *.png)"));
     if(FilePath.size() > 0){
         this->data->SetIm(FilePath);
-        this->pic_jpg->setPixmap(this->data->getPixmap());
+        this->pic_jpg->setPixmap(this->data->getPixmap().scaled(this->pic_jpg->width(),this->pic_jpg->height(),Qt::KeepAspectRatio));
         setAsciiFont();
         this->pic_Ascii->setFont(*this->AsciiFont);
         this->pic_Ascii->setText(this->data->getAsciiIm());
-        this->pic_Ascii->setFixedSize(this->data->getPixmap().size());
+        this->pic_Ascii->setFixedSize(this->data->getPixmap().scaled(this->pic_jpg->width(),this->pic_jpg->height(),Qt::KeepAspectRatio).size());
     }
 }
 
