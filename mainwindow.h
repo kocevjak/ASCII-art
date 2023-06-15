@@ -18,6 +18,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
+#include <QSlider>
 
 #include "picture.h"
 
@@ -65,6 +66,12 @@ private:
     QLabel* pic_jpg;
     QLabel* pic_Ascii;
     QWidget *pic_ascii_w;
+
+    QLabel *Brightness_l;
+    QSlider *Brightness;
+
+    QLabel *Contrast_l;
+    QSlider *Contrast;
 };
 
 #endif // MAINWINDOW_H
