@@ -125,4 +125,3 @@ void MainWindow::on_actionboth_triggered()
 {
 
 }
-

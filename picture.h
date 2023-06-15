@@ -21,12 +21,12 @@ private:
     QString asciiChar = " `'.,^:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"; //znaky pro ASCII art;
     int ImWidth;
     int ImHeight;
-    int scale = 0;  //proměná kolikrát se zmenší ascii obrazek
 
     QImage addBackground(const QImage &im);   //funkce slouží k přidání pozadí například do PNG obrázku
 public:
     Picture(QImage im); //konstruktor
     Picture();
+    ~Picture();
 
     void SetIm(QString path);   //nastavení obrázku
 
@@ -36,6 +36,8 @@ public:
 
     int getWidth();
     int getHeight();
+
+    bool isSetIm = false;
 
 };
 

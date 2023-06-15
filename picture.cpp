@@ -13,6 +13,10 @@ Picture::Picture(){
     this->ImHeight = -1;
 }
 
+Picture::~Picture(){
+
+}
+
 void Picture::SetIm(QString path){
     this->im.load(path);
     this->im = addBackground(this->im);
@@ -22,6 +26,7 @@ void Picture::SetIm(QString path){
 
     this->ImWidth = this->imSmall.width();
     this->ImHeight = this->imSmall.height();
+    this->isSetIm = true;
 }
 
 QPixmap Picture::getPixmap(){
@@ -43,7 +48,6 @@ QString Picture::getAsciiIm(){
         }
         out.push_back("\n");
     }
-    //out.setNum(ImWidth);
     return out;
 }
 
@@ -53,9 +57,7 @@ QImage Picture::addBackground(const QImage &im){
 
     QPainter painter(&resultImage);
 
-    // Vykreslení původního PNG obrázku s průhledností
     painter.drawImage(0, 0, im);
-
 
     painter.end();
 
