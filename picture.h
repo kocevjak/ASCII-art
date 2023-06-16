@@ -34,7 +34,6 @@ private:
     int ImWidth;
     int ImHeight;
 
-
     QImage addBackground(const QImage &im);   //funkce slouží k přidání pozadí například do PNG obrázku
 
 public:
@@ -58,8 +57,7 @@ public:
 
     bool isSetIm = false;
 
-    void setContrast(double value);
-    void setBrightness(int value);
+    void setContrBright(double contr, int bright);
 
     void updateIm();        //upraví všechny obrázky
 

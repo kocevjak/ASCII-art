@@ -48,8 +48,7 @@ private slots:
 
     void on_actionboth_triggered();     //uložení původního obrázku a ASCII obrázku do jednoho souboru
 
-    void BrightnessChange();    //změna jasu obrázku
-    void ContrastChange();      //změna kontrastu obrázku
+    void PictureChange();    //změna jasu obrázku
 
 private:
     Ui::MainWindow *ui;

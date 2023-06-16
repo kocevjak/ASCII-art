@@ -45,8 +45,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->setLayout();  //nastavení layoutu
 
-    connect(Brightness,SIGNAL(valueChanged(int)),SLOT(BrightnessChange()));
-    connect(Contrast,SIGNAL(valueChanged(int)),SLOT(ContrastChange()));
+    connect(Brightness,SIGNAL(valueChanged(int)),SLOT(PictureChange()));
+    connect(Contrast,SIGNAL(valueChanged(int)),SLOT(PictureChange()));
 }
 
 MainWindow::~MainWindow()
@@ -189,19 +189,9 @@ void MainWindow::on_actionboth_triggered()
     this->msg_box->information(this,"error","tato funkce zatím není přístupná");
 }
 
-void MainWindow::BrightnessChange(){
+void MainWindow::PictureChange(){
     if(data->isSetIm){
-        data->setBrightness(this->Brightness->value());
-        this->pic_jpg->setPixmap(data->getScalePixmap());
-        setAsciiFont();
-        this->pic_Ascii->setFont(*this->AsciiFont);
-        this->pic_Ascii->setText(data->getAsciiIm());
-    }
-}
-
-void MainWindow::ContrastChange(){
-    if(data->isSetIm){
-        data->setContrast((double)this->Contrast->value()/10);
+        data->setContrBright(((double)this->Contrast->value()/10),this->Brightness->value());
         this->pic_jpg->setPixmap(data->getScalePixmap());
         setAsciiFont();
         this->pic_Ascii->setFont(*this->AsciiFont);

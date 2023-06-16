@@ -93,14 +93,9 @@ int Picture::getHeight(){
     return this->ImHeight;
 }
 
-void Picture::setContrast(double value){
-    this->im = this->imOriginal*value;
-    updateIm();
-}
-
-void Picture::setBrightness(int value){
-
-    this->im = this->imOriginal+value;
+void Picture::setContrBright(double contr, int bright){
+    this->im = this->imOriginal*contr;
+    this->im = this->im+bright;
     updateIm();
 }
 
