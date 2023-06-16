@@ -14,6 +14,7 @@
 QImage operator*(QImage imag,const int v);
 QImage operator+(QImage imag,const int v);
 QColor operator+(const QColor col,const int v);
+QColor operator*(const QColor col,const int v);
 
 int parseInt(int v);        //vrátí číslo od 0 do 255;
 

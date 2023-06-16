@@ -94,7 +94,8 @@ int Picture::getHeight(){
 }
 
 void Picture::setContrast(int value){
-    //this->im.load("D:\skola\CVUT\skola\2_sem\programovani_C++\du\hw05\frames\frame_01.png");
+    this->im = this->imOriginal*value;
+    updateIm();
 }
 
 void Picture::setBrightness(int value){
@@ -115,14 +116,19 @@ void Picture::updateIm(){
 //operator
 QImage operator*(QImage imag,const int v){
     QImage out = imag;
-    /*QRgb color;
-    out = imag;
     for (int i = 0; i < imag.height(); ++i) {
         for (int j = 0; j < imag.width(); ++j) {
-            color = imag.pixel(j,i)*Picture::parseInt(v);
-            out.setPixelColor(j,i,color);
+            out.setPixelColor(j,i,(imag.pixelColor(j,i)*v));
         }
-    }*/
+    }
+    return out;
+}
+
+QColor operator*(const QColor col, const int v){
+    QColor out;
+    out.setRed(parseInt(col.red()*v));
+    out.setGreen(parseInt(col.green()*v));
+    out.setBlue(parseInt(col.blue()*v));
     return out;
 }
 

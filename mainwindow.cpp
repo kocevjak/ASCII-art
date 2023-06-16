@@ -38,9 +38,9 @@ MainWindow::MainWindow(QWidget *parent)
     this->Contrast_l->setText("Contrast");
     this->Contrast = new QSlider(Qt::Horizontal);
     this->Contrast->setTickPosition(QSlider::TicksAbove);
-    this->Contrast->setMinimum(-100);
-    this->Contrast->setMaximum(100);
-    this->Contrast->setValue(0);
+    this->Contrast->setMinimum(0);
+    this->Contrast->setMaximum(10);
+    this->Contrast->setValue(1);
 
     this->setLayout();  //nastavení layoutu
 
@@ -132,7 +132,6 @@ void MainWindow::setPictureLayout(){
 }
 
 //private slots
-
 void MainWindow::on_actionOpen_triggered()
 {
     QString FilePath = QFileDialog::getOpenFileName(nullptr, tr("Open Image"), "", tr("Image file (*.jpg *.png)"));
@@ -199,5 +198,11 @@ void MainWindow::BrightnessChange(){
 }
 
 void MainWindow::ContrastChange(){
-
+    if(data->isSetIm){
+        data->setContrast(this->Contrast->value());
+        this->pic_jpg->setPixmap(data->getScalePixmap());
+        setAsciiFont();
+        this->pic_Ascii->setFont(*this->AsciiFont);
+        this->pic_Ascii->setText(data->getAsciiIm());
+    }
 }

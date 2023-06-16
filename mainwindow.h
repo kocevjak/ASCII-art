@@ -19,6 +19,7 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QSlider>
+#include <cmath>
 
 #include "picture.h"
 
@@ -39,16 +40,16 @@ public:
 
 
 private slots:
-    void on_actionOpen_triggered();
+    void on_actionOpen_triggered();     //otevření obrázku
 
-    void on_actionImage_triggered();
+    void on_actionImage_triggered();    //uložení ASCII obrázku jako obrázek
 
-    void on_actionText_triggered();
+    void on_actionText_triggered();     //uložení ASCII obrázku jako text
 
-    void on_actionboth_triggered();
+    void on_actionboth_triggered();     //uložení původního obrázku a ASCII obrázku do jednoho souboru
 
-    void BrightnessChange();
-    void ContrastChange();
+    void BrightnessChange();    //změna jasu obrázku
+    void ContrastChange();      //změna kontrastu obrázku
 
 private:
     Ui::MainWindow *ui;
