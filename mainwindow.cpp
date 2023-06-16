@@ -187,9 +187,9 @@ void MainWindow::on_actionboth_triggered()
 }
 
 void MainWindow::BrightnessChange(){
-    data->setScalePixmap(data->getScalePixmap().width(),data->getScalePixmap().height());
+    //data->setScalePixmap(data->getScalePixmap().width(),data->getScalePixmap().height());
     data->setBrightness(this->Brightness->value());
-    this->pic_jpg->setPixmap(data->getPixmap());
+    this->pic_jpg->setPixmap(data->getScalePixmap());
     //setPictureLayout();
 }
 

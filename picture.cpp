@@ -25,6 +25,8 @@ Picture::~Picture(){
 void Picture::SetIm(QString path){
     this->im.load(path);
     this->im = addBackground(this->im);
+
+    this->imOriginal = this->im;
     this->imSmall = this->im;
 
     this->imSmall = this->imSmall.scaledToHeight(190);
@@ -96,7 +98,18 @@ void Picture::setContrast(int value){
 }
 
 void Picture::setBrightness(int value){
-    //this->im.load("D:\skola\CVUT\skola\2_sem\programovani_C++\du\hw05\frames\frame_01.png");
+
+    this->im = this->imOriginal+value;
+    updateIm();
+}
+
+void Picture::updateIm(){
+    this->imSmall = this->im;
+    this->imSmall = this->imSmall.scaledToHeight(190);
+    getAsciiIm();
+
+    this->imSmall = this->im;
+    setScalePixmap(this->scaleWidth,this->scaleHeight);
 }
 
 //operator
@@ -113,19 +126,34 @@ QImage operator*(const QImage& imag,const int v){
     return out;
 }
 
-QImage operator+(const QImage& imag,const int v){
+QImage operator+(QImage imag,const int v){
     QImage out = imag;
-    //QRgb color;
+
+    for (int i = 0; i < imag.height(); ++i) {
+        for (int j = 0; j < imag.width(); ++j) {
+            out.setPixelColor(j,i,(imag.pixelColor(j,i)+v));
+        }
+    }
+
     return out;
 }
 
-//private function
-int Picture::parseInt(int v){
+QColor operator+(const QColor col,const int v){
+    QColor out;
+    out.setRed(parseInt(col.red()+v));
+    out.setGreen(parseInt(col.green()+v));
+    out.setBlue(parseInt(col.blue()+v));
+
+    return out;
+}
+
+int parseInt(int v){
     if(v > 255){
         v = 255;
     }
     else if(v < 0){
         v = 0;
     }
+    //qDebug() << v << "\n";
     return v;
 }

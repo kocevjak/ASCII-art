@@ -12,7 +12,10 @@
 #include <QRgb>
 
 QImage operator*(const QImage& imag,const int v);
-QImage operator+(const QImage& imag,const int v);
+QImage operator+(QImage imag,const int v);
+QColor operator+(const QColor col,const int v);
+
+int parseInt(int v);        //vrátí číslo od 0 do 255;
 
 class Picture
 {
@@ -56,8 +59,6 @@ public:
 
     void setContrast(int value);
     void setBrightness(int value);
-
-    int static parseInt(int v);        //vrátí číslo od 0 do 255;
 
     void updateIm();        //upraví všechny obrázky
 
