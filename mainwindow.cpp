@@ -29,8 +29,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->Brightness_l->setText("Brightness");
     this->Brightness = new QSlider(Qt::Horizontal);
     this->Brightness->setTickPosition(QSlider::TicksAbove);
-    this->Brightness->setMinimum(-100);
-    this->Brightness->setMaximum(100);
+    this->Brightness->setMinimum(-150);
+    this->Brightness->setMaximum(150);
     this->Brightness->setValue(0);
 
     //set contrast
@@ -104,22 +104,12 @@ QLabel* MainWindow::setPicAscii(){
     return pic;
 }
 
-//private slots
 void MainWindow::setAsciiFont(){
 
     this->AsciiFont->setPixelSize((int)((double)this->pic_ascii_w->height()/(double)data->getSmallPixmap().height()));
     this->AsciiFont->setStretch(70);
     this->AsciiFont->setStyleHint(QFont::Monospace);
     //this->AsciiFont->setFixedPitch(true);
-}
-
-void MainWindow::on_actionOpen_triggered()
-{
-    QString FilePath = QFileDialog::getOpenFileName(nullptr, tr("Open Image"), "", tr("Image file (*.jpg *.png)"));
-    if(FilePath.size() > 0){
-        this->data->SetIm(FilePath);
-        setPictureLayout();
-    }
 }
 
 void MainWindow::setPictureLayout(){
@@ -138,6 +128,18 @@ void MainWindow::setPictureLayout(){
         //this->pic_Ascii->setFixedHeight(this->AsciiFont->pixelSize()*data->getSmallPixmap().height());
         //this->pic_ascii_w->setFixedHeight(this->AsciiFont->pixelSize()*data->getSmallPixmap().height());
         //this->pic_Ascii->setFixedWidth(3*this->AsciiFont->pixelSize()*data->getSmallPixmap().width());
+    }
+}
+
+//private slots
+
+void MainWindow::on_actionOpen_triggered()
+{
+    QString FilePath = QFileDialog::getOpenFileName(nullptr, tr("Open Image"), "", tr("Image file (*.jpg *.png)"));
+    if(FilePath.size() > 0){
+        this->data->SetIm(FilePath);
+        setPictureLayout();
+        this->Brightness->setValue(0);
     }
 }
 
@@ -187,10 +189,13 @@ void MainWindow::on_actionboth_triggered()
 }
 
 void MainWindow::BrightnessChange(){
-    //data->setScalePixmap(data->getScalePixmap().width(),data->getScalePixmap().height());
-    data->setBrightness(this->Brightness->value());
-    this->pic_jpg->setPixmap(data->getScalePixmap());
-    //setPictureLayout();
+    if(data->isSetIm){
+        data->setBrightness(this->Brightness->value());
+        this->pic_jpg->setPixmap(data->getScalePixmap());
+        setAsciiFont();
+        this->pic_Ascii->setFont(*this->AsciiFont);
+        this->pic_Ascii->setText(data->getAsciiIm());
+    }
 }
 
 void MainWindow::ContrastChange(){

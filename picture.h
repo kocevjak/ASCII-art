@@ -11,7 +11,7 @@
 #include <QChar>
 #include <QRgb>
 
-QImage operator*(const QImage& imag,const int v);
+QImage operator*(QImage imag,const int v);
 QImage operator+(QImage imag,const int v);
 QColor operator+(const QColor col,const int v);
 

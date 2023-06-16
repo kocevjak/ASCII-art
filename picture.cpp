@@ -106,14 +106,14 @@ void Picture::setBrightness(int value){
 void Picture::updateIm(){
     this->imSmall = this->im;
     this->imSmall = this->imSmall.scaledToHeight(190);
-    getAsciiIm();
+    //getAsciiIm();
 
-    this->imSmall = this->im;
+    //this->imSmall = this->im;
     setScalePixmap(this->scaleWidth,this->scaleHeight);
 }
 
 //operator
-QImage operator*(const QImage& imag,const int v){
+QImage operator*(QImage imag,const int v){
     QImage out = imag;
     /*QRgb color;
     out = imag;
@@ -128,13 +128,11 @@ QImage operator*(const QImage& imag,const int v){
 
 QImage operator+(QImage imag,const int v){
     QImage out = imag;
-
     for (int i = 0; i < imag.height(); ++i) {
         for (int j = 0; j < imag.width(); ++j) {
             out.setPixelColor(j,i,(imag.pixelColor(j,i)+v));
         }
     }
-
     return out;
 }
 
@@ -143,7 +141,6 @@ QColor operator+(const QColor col,const int v){
     out.setRed(parseInt(col.red()+v));
     out.setGreen(parseInt(col.green()+v));
     out.setBlue(parseInt(col.blue()+v));
-
     return out;
 }
 
@@ -154,6 +151,5 @@ int parseInt(int v){
     else if(v < 0){
         v = 0;
     }
-    //qDebug() << v << "\n";
     return v;
 }
