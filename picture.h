@@ -11,10 +11,10 @@
 #include <QChar>
 #include <QRgb>
 
-QImage operator*(QImage imag,const int v);
+QImage operator*(QImage imag,const double v);
 QImage operator+(QImage imag,const int v);
 QColor operator+(const QColor col,const int v);
-QColor operator*(const QColor col,const int v);
+QColor operator*(const QColor col,const double v);
 
 int parseInt(int v);        //vrátí číslo od 0 do 255;
 
@@ -58,7 +58,7 @@ public:
 
     bool isSetIm = false;
 
-    void setContrast(int value);
+    void setContrast(double value);
     void setBrightness(int value);
 
     void updateIm();        //upraví všechny obrázky

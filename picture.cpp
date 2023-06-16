@@ -93,7 +93,7 @@ int Picture::getHeight(){
     return this->ImHeight;
 }
 
-void Picture::setContrast(int value){
+void Picture::setContrast(double value){
     this->im = this->imOriginal*value;
     updateIm();
 }
@@ -114,7 +114,7 @@ void Picture::updateIm(){
 }
 
 //operator
-QImage operator*(QImage imag,const int v){
+QImage operator*(QImage imag,const double v){
     QImage out = imag;
     for (int i = 0; i < imag.height(); ++i) {
         for (int j = 0; j < imag.width(); ++j) {
@@ -124,7 +124,7 @@ QImage operator*(QImage imag,const int v){
     return out;
 }
 
-QColor operator*(const QColor col, const int v){
+QColor operator*(const QColor col, const double v){
     QColor out;
     out.setRed(parseInt(col.red()*v));
     out.setGreen(parseInt(col.green()*v));

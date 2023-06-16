@@ -38,9 +38,10 @@ MainWindow::MainWindow(QWidget *parent)
     this->Contrast_l->setText("Contrast");
     this->Contrast = new QSlider(Qt::Horizontal);
     this->Contrast->setTickPosition(QSlider::TicksAbove);
+    this->Contrast->setTickInterval(1);
     this->Contrast->setMinimum(0);
-    this->Contrast->setMaximum(10);
-    this->Contrast->setValue(1);
+    this->Contrast->setMaximum(100);
+    this->Contrast->setValue(10);
 
     this->setLayout();  //nastavení layoutu
 
@@ -139,6 +140,7 @@ void MainWindow::on_actionOpen_triggered()
         this->data->SetIm(FilePath);
         setPictureLayout();
         this->Brightness->setValue(0);
+        this->Contrast->setValue(10);
     }
 }
 
@@ -199,7 +201,7 @@ void MainWindow::BrightnessChange(){
 
 void MainWindow::ContrastChange(){
     if(data->isSetIm){
-        data->setContrast(this->Contrast->value());
+        data->setContrast((double)this->Contrast->value()/10);
         this->pic_jpg->setPixmap(data->getScalePixmap());
         setAsciiFont();
         this->pic_Ascii->setFont(*this->AsciiFont);
