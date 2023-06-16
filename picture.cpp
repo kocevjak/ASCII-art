@@ -78,6 +78,8 @@ QPixmap Picture::getScalePixmap(){
 }
 
 void Picture::setScalePixmap(int width, int height){
+    this->scaleWidth = width;
+    this->scaleHeight = height;
     this->imScale = im.scaled(width,height,Qt::KeepAspectRatio);
 }
 
@@ -90,31 +92,31 @@ int Picture::getHeight(){
 }
 
 void Picture::setContrast(int value){
-    this->im = this->imOriginal * (value/10);
+    //this->im.load("D:\skola\CVUT\skola\2_sem\programovani_C++\du\hw05\frames\frame_01.png");
 }
 
 void Picture::setBrightness(int value){
-    this->im = (this->imOriginal + value);
+    //this->im.load("D:\skola\CVUT\skola\2_sem\programovani_C++\du\hw05\frames\frame_01.png");
 }
 
 //operator
-QImage operator*(const QImage imag,const int v){
-    QImage out;
-    QRgb color;
+QImage operator*(const QImage& imag,const int v){
+    QImage out = imag;
+    /*QRgb color;
     out = imag;
     for (int i = 0; i < imag.height(); ++i) {
         for (int j = 0; j < imag.width(); ++j) {
             color = imag.pixel(j,i)*Picture::parseInt(v);
             out.setPixelColor(j,i,color);
         }
-    }
+    }*/
     return out;
 }
 
-QImage operator+(const QImage imag,const int v){
-    QImage out(imag);
-    QRgb color;
-    return imag;
+QImage operator+(const QImage& imag,const int v){
+    QImage out = imag;
+    //QRgb color;
+    return out;
 }
 
 //private function

@@ -11,8 +11,8 @@
 #include <QChar>
 #include <QRgb>
 
-static QImage operator*(const QImage imag,const int v);
-static QImage operator+(const QImage imag,const int v);
+QImage operator*(const QImage& imag,const int v);
+QImage operator+(const QImage& imag,const int v);
 
 class Picture
 {
@@ -23,9 +23,13 @@ private:
     QImage im;      //proměná pro uložení obrázku v plné velikosti
     QImage imScale;     //proměná pro náhled obrázku
 
+    int scaleWidth = 0;
+    int scaleHeight = 0;
+
     QString asciiChar = " `'.,^:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"; //znaky pro ASCII art;
     int ImWidth;
     int ImHeight;
+
 
     QImage addBackground(const QImage &im);   //funkce slouží k přidání pozadí například do PNG obrázku
 
@@ -55,9 +59,8 @@ public:
 
     int static parseInt(int v);        //vrátí číslo od 0 do 255;
 
-    //operator
+    void updateIm();        //upraví všechny obrázky
 
-    //
 };
 
 #endif // PICTURE_H
