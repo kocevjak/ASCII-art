@@ -96,10 +96,30 @@ void Picture::setBrightness(int value){
 }
 
 //operator
-QImage Picture::operator*(int v){
+QImage Picture::operator*(const int& v){
+    QImage out;
+    QRgb color;
+    out = this->imOriginal;
+    for (int i = 0; i < this->imOriginal.height(); ++i) {
+        for (int j = 0; j < this->imOriginal.width(); ++j) {
+            color = this->imOriginal.pixel(j,i)*this->parseInt(v);
+            out.setPixelColor(j,i,color);
+        }
+    }
+    return out;
+}
+
+QImage Picture::operator+(const int& v){
 
 }
 
-QImage Picture::operator+(int v){
-
+//private function
+int Picture::parseInt(int v){
+    if(v > 255){
+        v = 255;
+    }
+    else if(v < 0){
+        v = 0;
+    }
+    return v;
 }

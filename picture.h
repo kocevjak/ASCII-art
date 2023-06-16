@@ -9,6 +9,7 @@
 #include <QLabel>
 #include <QPainter>
 #include <QChar>
+#include <QRgb>
 
 class Picture
 {
@@ -24,6 +25,7 @@ private:
     int ImHeight;
 
     QImage addBackground(const QImage &im);   //funkce slouží k přidání pozadí například do PNG obrázku
+    int parseInt(int v);        //vrátí číslo od 0 do 255;
 public:
     Picture(QImage im); //konstruktor
     Picture();
@@ -49,8 +51,8 @@ public:
     void setBrightness(int value);
 
     //operator
-    QImage operator*(int v);
-    QImage operator+(int v);
+    QImage operator *(const int& v);
+    QImage operator+(const int& v);
 };
 
 #endif // PICTURE_H
