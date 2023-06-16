@@ -1,5 +1,7 @@
 #include "picture.h"
 
+
+
 Picture::Picture(QImage im)
 {
     this->im = im;
@@ -88,29 +90,31 @@ int Picture::getHeight(){
 }
 
 void Picture::setContrast(int value){
-    //this->im = this->imOriginal. * value/10;
+    this->im = this->imOriginal * (value/10);
 }
 
 void Picture::setBrightness(int value){
-
+    this->im = (this->imOriginal + value);
 }
 
 //operator
-QImage Picture::operator*(const int& v){
+QImage operator*(const QImage imag,const int v){
     QImage out;
     QRgb color;
-    out = this->imOriginal;
-    for (int i = 0; i < this->imOriginal.height(); ++i) {
-        for (int j = 0; j < this->imOriginal.width(); ++j) {
-            color = this->imOriginal.pixel(j,i)*this->parseInt(v);
+    out = imag;
+    for (int i = 0; i < imag.height(); ++i) {
+        for (int j = 0; j < imag.width(); ++j) {
+            color = imag.pixel(j,i)*Picture::parseInt(v);
             out.setPixelColor(j,i,color);
         }
     }
     return out;
 }
 
-QImage Picture::operator+(const int& v){
-
+QImage operator+(const QImage imag,const int v){
+    QImage out(imag);
+    QRgb color;
+    return imag;
 }
 
 //private function

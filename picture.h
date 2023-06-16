@@ -11,6 +11,9 @@
 #include <QChar>
 #include <QRgb>
 
+static QImage operator*(const QImage imag,const int v);
+static QImage operator+(const QImage imag,const int v);
+
 class Picture
 {
 private:
@@ -25,7 +28,7 @@ private:
     int ImHeight;
 
     QImage addBackground(const QImage &im);   //funkce slouží k přidání pozadí například do PNG obrázku
-    int parseInt(int v);        //vrátí číslo od 0 do 255;
+
 public:
     Picture(QImage im); //konstruktor
     Picture();
@@ -50,9 +53,11 @@ public:
     void setContrast(int value);
     void setBrightness(int value);
 
+    int static parseInt(int v);        //vrátí číslo od 0 do 255;
+
     //operator
-    QImage operator *(const int& v);
-    QImage operator+(const int& v);
+
+    //
 };
 
 #endif // PICTURE_H
