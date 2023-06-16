@@ -29,18 +29,18 @@ MainWindow::MainWindow(QWidget *parent)
     this->Brightness_l->setText("Brightness");
     this->Brightness = new QSlider(Qt::Horizontal);
     this->Brightness->setTickPosition(QSlider::TicksAbove);
-    this->Brightness->setMinimum(0);
+    this->Brightness->setMinimum(-100);
     this->Brightness->setMaximum(100);
-    this->Brightness->setValue(50);
+    this->Brightness->setValue(0);
 
     //set contrast
     this->Contrast_l = new QLabel();
     this->Contrast_l->setText("Contrast");
     this->Contrast = new QSlider(Qt::Horizontal);
     this->Contrast->setTickPosition(QSlider::TicksAbove);
-    this->Contrast->setMinimum(0);
+    this->Contrast->setMinimum(-100);
     this->Contrast->setMaximum(100);
-    this->Contrast->setValue(50);
+    this->Contrast->setValue(0);
 
     this->setLayout();  //nastavení layoutu
 

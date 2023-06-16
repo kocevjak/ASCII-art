@@ -14,6 +14,7 @@ class Picture
 {
 private:
     QString AsciiIm;    //proměná pro uložení obrazku ve formátu ASCII
+    QImage imOriginal;  //uložený originální obrázek
     QImage imSmall;          //proměná pro uložení zmenšeného obrazku k zobrazení do ASCII
     QImage im;      //proměná pro uložení obrázku v plné velikosti
     QImage imScale;     //proměná pro náhled obrázku
@@ -44,6 +45,12 @@ public:
 
     bool isSetIm = false;
 
+    void setContrast(int value);
+    void setBrightness(int value);
+
+    //operator
+    QImage operator*(int v);
+    QImage operator+(int v);
 };
 
 #endif // PICTURE_H

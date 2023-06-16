@@ -3,6 +3,7 @@
 Picture::Picture(QImage im)
 {
     this->im = im;
+    this->imOriginal = im;
 }
 
 Picture::Picture(){
@@ -10,6 +11,7 @@ Picture::Picture(){
     this->AsciiIm = "";
     this->imSmall.load("");
     this->im.load("");
+    this->imOriginal.load("");
     this->ImWidth = -1;
     this->ImHeight = -1;
 }
@@ -83,4 +85,21 @@ int Picture::getWidth(){
 
 int Picture::getHeight(){
     return this->ImHeight;
+}
+
+void Picture::setContrast(int value){
+    //this->im = this->imOriginal. * value/10;
+}
+
+void Picture::setBrightness(int value){
+
+}
+
+//operator
+QImage Picture::operator*(int v){
+
+}
+
+QImage Picture::operator+(int v){
+
 }
