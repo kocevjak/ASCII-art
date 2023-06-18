@@ -1,5 +1,3 @@
-
-
 #include <QApplication>
 #include <QPushButton>
 #include <QVBoxLayout>
