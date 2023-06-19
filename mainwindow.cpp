@@ -1,6 +1,3 @@
-
-
-
 #include "mainwindow.h"
 //#include "picture.h"
 #include "ui_mainwindow.h"
@@ -93,7 +90,6 @@ QLabel* MainWindow::setPicJpg(){
     pic->setAlignment(Qt::AlignHCenter);
     pic->setPixmap(p);
     pic->setStyleSheet("border: 1px solid black");
-    //pic->setFixedWidth(this->ui->widget->width();
     return pic;
 }
 
@@ -101,7 +97,6 @@ QLabel* MainWindow::setPicAscii(){
     QLabel *pic = new QLabel(this->pic_ascii_w);
     pic->setStyleSheet("border: 1px solid black");
     pic->setFixedSize(0,0);
-    //pic->setAlignment(Qt::AlignHCenter);
     return pic;
 }
 
@@ -122,14 +117,6 @@ void MainWindow::setPictureLayout(){
     this->pic_Ascii->setText(this->data->getAsciiIm());
     this->pic_Ascii->setFixedHeight(this->AsciiFont->pixelSize()*data->getSmallPixmap().height());
     this->pic_Ascii->setFixedWidth(this->AsciiFont->pixelSize()*data->getSmallPixmap().width()+5);
-    //this->pic_ascii_w->setFixedSize(this->pic_Ascii->size());
-
-
-    if(((this->AsciiFont->pixelSize())*(data->getSmallPixmap().height())) >= (this->pic_jpg->height())){
-        //this->pic_Ascii->setFixedHeight(this->AsciiFont->pixelSize()*data->getSmallPixmap().height());
-        //this->pic_ascii_w->setFixedHeight(this->AsciiFont->pixelSize()*data->getSmallPixmap().height());
-        //this->pic_Ascii->setFixedWidth(3*this->AsciiFont->pixelSize()*data->getSmallPixmap().width());
-    }
 }
 
 //private slots

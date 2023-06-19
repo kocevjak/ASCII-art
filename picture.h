@@ -30,7 +30,7 @@ private:
     int scaleWidth = 0;
     int scaleHeight = 0;
 
-    QString asciiChar = " `'.,^:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"; //znaky pro ASCII art;
+    QString asciiChar = "   `'.,^:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"; //znaky pro ASCII art;
     int ImWidth;
     int ImHeight;
 
