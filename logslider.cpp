@@ -19,8 +19,8 @@ double logSlider::logarithmicPosition() const
 void logSlider::setLogarithmicPosition(double position){
     double min = this->minimum();
     double max = this->maximum();
-    double logMin = log(min);
-    double logMax = log(max);
-    double value = exp(logMin + position * (logMax - logMin));
+    double logMin = log10(min);
+    double logMax = log10(max);
+    double value = pow(10,position);
     this->setValue(static_cast<int>(value));
 }

@@ -22,6 +22,7 @@
 #include <cmath>
 
 #include "picture.h"
+#include "logslider.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -48,7 +49,7 @@ private slots:
 
     void on_actionboth_triggered();     //uložení původního obrázku a ASCII obrázku do jednoho souboru
 
-    void PictureChange();    //změna jasu obrázku
+    void PictureChange();    //změna jasu nebo kontrastu obrázku
 
 private:
     Ui::MainWindow *ui;
@@ -74,7 +75,7 @@ private:
     QSlider *Brightness;
 
     QLabel *Contrast_l;
-    QSlider *Contrast;
+    logSlider *Contrast;
 
     //event
 
