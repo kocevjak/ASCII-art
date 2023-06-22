@@ -13,6 +13,10 @@ public:
     double logarithmicPosition() const;
 
     void setLogarithmicPosition(double position);
+
+    void setLogMinimum(double min);
+
+    void setLogMaximum(double max);
 };
 
 #endif // LOGSLIDER_H

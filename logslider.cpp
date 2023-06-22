@@ -24,3 +24,11 @@ void logSlider::setLogarithmicPosition(double position){
     double value = pow(10,position);
     this->setValue(static_cast<int>(value));
 }
+
+void logSlider::setLogMinimum(double min){
+    this->setMinimum((int)exp(min));
+}
+
+void logSlider::setLogMaximum(double max){
+    this->setMinimum((int)exp(max));
+}
