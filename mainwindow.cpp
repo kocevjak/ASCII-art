@@ -175,7 +175,22 @@ void MainWindow::on_actionText_triggered()
 
 void MainWindow::on_actionboth_triggered()
 {
-    this->msg_box->information(this,"error","tato funkce zatím není přístupná");
+    QPixmap ascii;
+
+    if(data->isSetIm){
+        QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),
+                                                    "ASCII art",
+                                                    "jpg (*.jpg);"
+                                                    ";png (*.png);");
+        ascii = this->pic_Ascii->grab();
+        QPixmap out();
+        if(!out.save(path)){
+            this->msg_box->critical(this,"Error","error with save");
+        }
+    }
+    else{
+        this->msg_box->critical(this,"Error","not open picture");
+    }
 }
 
 void MainWindow::PictureChange(){
