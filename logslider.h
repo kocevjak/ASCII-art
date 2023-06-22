@@ -17,6 +17,9 @@ public:
     void setLogMinimum(double min);
 
     void setLogMaximum(double max);
+
+private:
+    int scale = 1;  //upravení ticket u QSlider
 };
 
 #endif // LOGSLIDER_H

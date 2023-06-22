@@ -17,22 +17,17 @@ double logSlider::logarithmicPosition() const
 }
 
 void logSlider::setLogarithmicPosition(double position){
-    double min = this->minimum();
-    double max = this->maximum();
-    double logMin = log10(min);
-    double logMax = log10(max);
-    double value = log10(position)*100;
-    this->setValue((int)((position) - pow(10,this->minimum()/10)));
+    this->setValue((int)(log10(position)*this->scale));
 }
 
 void logSlider::setLogMinimum(double min){
     if(min > 0){
-        this->setMinimum((int)(log10(min)*100));
+        this->setMinimum((int)(log10(min)*this->scale));
     }
 }
 
 void logSlider::setLogMaximum(double max){
     if(max > 0){
-        this->setMaximum((int)(log10(max)*100));
+        this->setMaximum((int)(log10(max)*this->scale));
     }
 }
