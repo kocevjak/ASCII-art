@@ -129,7 +129,7 @@ void MainWindow::on_actionOpen_triggered()
         this->data->SetIm(FilePath);
         setPictureLayout();
         this->Brightness->setValue(0);
-        this->Contrast->setValue(10);
+        this->Contrast->setLogarithmicPosition(1);
     }
 }
 
