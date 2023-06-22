@@ -18,6 +18,8 @@ public:
 
     void setLogMaximum(double max);
 
+    void setScale(int scale);
+
 private:
     int scale = 1;  //upravení ticket u QSlider
 };

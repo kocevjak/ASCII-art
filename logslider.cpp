@@ -31,3 +31,7 @@ void logSlider::setLogMaximum(double max){
         this->setMaximum((int)(log10(max)*this->scale));
     }
 }
+
+void logSlider::setScale(int scale){
+    this->scale = scale;
+}
