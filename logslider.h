@@ -21,7 +21,7 @@ public:
     void setScale(int scale);
 
 private:
-    int scale = 1;  //upravení ticket u QSlider
+    int scale = 1;  //upravení tick interval u QSlider
 };
 
 #endif // LOGSLIDER_H
