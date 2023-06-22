@@ -7,12 +7,7 @@ logSlider::logSlider(QWidget* parent) : QSlider(parent)
 
 double logSlider::logarithmicPosition() const
 {
-    int value = this->value();
-    double min = this->minimum();
-    double max = this->maximum();
-    double logMin = log(min);
-    double logMax = log(max);
-    double position = (log(value) - logMin) / (logMax - logMin);
+    double position = pow(10,(this->value()/(double)this->scale));
     return position;
 }
 

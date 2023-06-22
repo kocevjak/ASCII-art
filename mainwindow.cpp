@@ -180,7 +180,7 @@ void MainWindow::on_actionboth_triggered()
 
 void MainWindow::PictureChange(){
     if(data->isSetIm){
-        data->setContrBright(((double)this->Contrast->value()/10),this->Brightness->value());
+        data->setContrBright(((double)this->Contrast->logarithmicPosition()),this->Brightness->value());
         this->pic_jpg->setPixmap(data->getScalePixmap());
         setAsciiFont();
         this->pic_Ascii->setFont(*this->AsciiFont);
