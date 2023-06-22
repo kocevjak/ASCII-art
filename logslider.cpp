@@ -21,14 +21,18 @@ void logSlider::setLogarithmicPosition(double position){
     double max = this->maximum();
     double logMin = log10(min);
     double logMax = log10(max);
-    double value = pow(10,position);
-    this->setValue(static_cast<int>(value));
+    double value = log10(position)*100;
+    this->setValue((int)((position) - pow(10,this->minimum())));
 }
 
 void logSlider::setLogMinimum(double min){
-    this->setMinimum((int)exp(min));
+    if(min > 0){
+        this->setMinimum((int)(log10(min)*100));
+    }
 }
 
 void logSlider::setLogMaximum(double max){
-    this->setMinimum((int)exp(max));
+    if(max > 0){
+        this->setMaximum((int)(log10(max)*100));
+    }
 }

@@ -37,8 +37,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->Contrast->setOrientation(Qt::Horizontal);
     this->Contrast->setTickPosition(QSlider::TicksAbove);
     this->Contrast->setTickInterval(1);
-    this->Contrast->setMinimum(1);
-    this->Contrast->setMaximum(100);
+    this->Contrast->setLogMinimum(0.1);
+    this->Contrast->setLogMaximum(10);
     this->Contrast->setLogarithmicPosition(1);
 
     this->setLayout();  //nastavení layoutu

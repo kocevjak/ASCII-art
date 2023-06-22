@@ -3,7 +3,7 @@
 
 #include <QSlider>
 #include <QWidget>
-
+#include <QDebug>
 
 class logSlider : public QSlider
 {
