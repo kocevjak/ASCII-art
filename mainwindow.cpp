@@ -121,6 +121,33 @@ void MainWindow::setPictureLayout(){
     this->pic_Ascii->setFixedWidth(this->AsciiFont->pixelSize()*data->getSmallPixmap().width()+5);
 }
 
+QImage MainWindow::MergeImage(QImage origin,QImage ascii, bool horizontal){
+    QImage out(1, 1, QImage::Format_RGB32);
+    if(horizontal){     //obázky budou vedle sebe
+        if(ascii.height() > origin.height()){
+            origin = origin.scaledToHeight(ascii.height());
+        }
+        else {
+            ascii = ascii.scaledToHeight(origin.height());
+        }
+        out = out.scaled(ascii.width()+origin.width(),origin.width(),Qt::IgnoreAspectRatio);
+        for (int i = 0; i < out.width(); ++i) {
+            for (int j = 0; j < out.height(); ++j) {
+                if(i < origin.width()){
+                    out.setPixelColor(i,j,origin.pixelColor(i,j));
+                }
+                else{
+                    out.setPixelColor(i,j);
+                }
+            }
+        }
+    }
+    else{       //obrázlky budou nad sebou
+
+    }
+    return out;
+}
+
 //private slots
 void MainWindow::on_actionOpen_triggered()
 {
@@ -183,7 +210,8 @@ void MainWindow::on_actionboth_triggered()
                                                     "jpg (*.jpg);"
                                                     ";png (*.png);");
         ascii = this->pic_Ascii->grab();
-        QPixmap out();
+        QImage out = this->MergeImage(data->getScalePixmap().toImage(),ascii.toImage());
+        qDebug() << out.height() << "  " << out.width();
         if(!out.save(path)){
             this->msg_box->critical(this,"Error","error with save");
         }

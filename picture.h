@@ -61,6 +61,8 @@ public:
 
     void updateIm();        //upraví všechny obrázky
 
+
+
 };
 
 #endif // PICTURE_H
