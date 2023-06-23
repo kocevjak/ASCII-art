@@ -137,13 +137,29 @@ QImage MainWindow::MergeImage(QImage origin,QImage ascii, bool horizontal){
                     out.setPixelColor(i,j,origin.pixelColor(i,j));
                 }
                 else{
-                    out.setPixelColor(i,j);
+                    out.setPixelColor(i,j,ascii.pixelColor(i-origin.width(),j));
                 }
             }
         }
     }
-    else{       //obrázlky budou nad sebou
-
+    else{       //obrázky budou nad sebou
+        if(ascii.width() > origin.width()){
+            origin = origin.scaledToWidth(ascii.width());
+        }
+        else{
+            ascii = ascii.scaledToWidth(origin.width());
+        }
+        out = out.scaled(ascii.width(),ascii.height()+origin.height(),Qt::IgnoreAspectRatio);
+        for (int i = 0; i < out.height(); ++i) {
+            for (int j = 0; j < out.width(); ++j) {
+                if(i < origin.height()){
+                    out.setPixelColor(j,i,origin.pixelColor(j,i));
+                }
+                else {
+                    out.setPixelColor(j,i,ascii.pixelColor(j,i-origin.height()));
+                }
+            }
+        }
     }
     return out;
 }
@@ -203,6 +219,10 @@ void MainWindow::on_actionText_triggered()
 void MainWindow::on_actionboth_triggered()
 {
     QPixmap ascii;
+    QMessageBox selectLayout;
+    QPushButton *horizont = selectLayout.addButton(tr("Horizontal"),QMessageBox::ActionRole);
+    QPushButton *vertical = selectLayout.addButton(tr("Vertical"),QMessageBox::ActionRole);
+    QImage out;
 
     if(data->isSetIm){
         QString path = QFileDialog::getSaveFileName(nullptr,tr("save file"),
@@ -210,8 +230,15 @@ void MainWindow::on_actionboth_triggered()
                                                     "jpg (*.jpg);"
                                                     ";png (*.png);");
         ascii = this->pic_Ascii->grab();
-        QImage out = this->MergeImage(data->getScalePixmap().toImage(),ascii.toImage());
-        qDebug() << out.height() << "  " << out.width();
+
+        selectLayout.exec();
+        if(selectLayout.clickedButton() == horizont){
+            out = this->MergeImage(data->getScalePixmap().toImage(),ascii.toImage()); //spojení obou obrázků vertikálně
+        }
+        else if(selectLayout.clickedButton() == vertical){
+            out = this->MergeImage(data->getScalePixmap().toImage(),ascii.toImage(),false); //spojení obou obrázků horizontalne
+        }
+
         if(!out.save(path)){
             this->msg_box->critical(this,"Error","error with save");
         }
