@@ -222,6 +222,7 @@ void MainWindow::on_actionboth_triggered()
     QMessageBox selectLayout;
     QPushButton *horizont = selectLayout.addButton(tr("Horizontal"),QMessageBox::ActionRole);
     QPushButton *vertical = selectLayout.addButton(tr("Vertical"),QMessageBox::ActionRole);
+    selectLayout.setInformativeText("Select layout");
     QImage out;
 
     if(data->isSetIm){
@@ -233,10 +234,10 @@ void MainWindow::on_actionboth_triggered()
 
         selectLayout.exec();
         if(selectLayout.clickedButton() == horizont){
-            out = this->MergeImage(data->getScalePixmap().toImage(),ascii.toImage()); //spojení obou obrázků vertikálně
+            out = this->MergeImage(data->getPixmap().toImage(),ascii.toImage()); //spojení obou obrázků vertikálně
         }
         else if(selectLayout.clickedButton() == vertical){
-            out = this->MergeImage(data->getScalePixmap().toImage(),ascii.toImage(),false); //spojení obou obrázků horizontalne
+            out = this->MergeImage(data->getPixmap().toImage(),ascii.toImage(),false); //spojení obou obrázků horizontalne
         }
 
         if(!out.save(path)){
