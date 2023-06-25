@@ -9,3 +9,5 @@ Pomocí Slideru můžeme u otevřeného obrázku upravit jas a contrast
 ### Uložení obrázku
 V nabídce File vybereme položku "Save as". Nádledně vybereme v jakém formátu chceme obrázek uložit a umístění kam se obrázek uloží.
 ![ASCII art](https://github.com/kocevjak/ASCII-art/assets/63099083/88dcae70-21d9-4607-845a-0e0c872b0a5c)
+
+
