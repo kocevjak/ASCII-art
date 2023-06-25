@@ -17,10 +17,10 @@ https://github.com/kocevjak/ASCII-art/assets/63099083/12a655f9-9799-4c6e-864b-a7
 
 ## ukázka obrázků
 ### Save as image
-![ASCII art](https://github.com/kocevjak/ASCII-art/assets/63099083/354cd892-4ba2-4db3-b138-401d55d34af0)
+![ASCII art](https://github.com/kocevjak/ASCII-art/assets/63099083/0a5eb1b5-77fc-409a-bc4c-3bb2267f0c94)
 
 ### Save as both
 #### Horizontální řazení
-![ASCII art](https://github.com/kocevjak/ASCII-art/assets/63099083/88dcae70-21d9-4607-845a-0e0c872b0a5c)
+![ASCII _art_02](https://github.com/kocevjak/ASCII-art/assets/63099083/c746226e-b870-4452-a096-04bfb7731d1d)
 #### Vertikální řazení
-![ASCII_art_03](https://github.com/kocevjak/ASCII-art/assets/63099083/aa55c701-af84-4217-80e5-ff3bf105b44e)
+![ASCII_art_03](https://github.com/kocevjak/ASCII-art/assets/63099083/fff50b7f-09ab-448f-aea6-516e3a9a4c8f)
