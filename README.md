@@ -3,7 +3,7 @@ Program převede obrázek do ASCII znaků. Obrázek převedený do ASCII znaků 
 
 ## Návod
 ### Otevření obrázku
-V levém horním rohu klikneme na ikonku File. Otevře se rozbalovací nabídka ve které vybereme první položku "Open". Otevře se nám FileDialog pomocí kterého vybereme soubor typu .jpg nebo .png.
+"File" -> "Open" - lze otevřít soubor typu jpg nebo png
 ### Uprava obrázku
 Pomocí Slideru můžeme u otevřeného obrázku upravit jas a contrast
 ### Uložení obrázku
