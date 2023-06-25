@@ -13,7 +13,7 @@ Pomocí Slideru můžeme u otevřeného obrázku upravit jas a contrast
 "File" -> "Save as" -> "Save both pictures" - uloží původní obrázek společně s ascii obrázkem. Lze zvolit jestli obrázky budou vedle sebe horizontálně nebo vertikálně.
 
 ## video ukázka
-[Video ukáza](https://github.com/kocevjak/ASCII-art/assets/63099083/a9f3aa44-f972-407e-9cbf-0945b350af9f)
+https://github.com/kocevjak/ASCII-art/assets/63099083/12a655f9-9799-4c6e-864b-a7ec73d0e927
 
 ## ukázka obrázků
 ### Save as image
