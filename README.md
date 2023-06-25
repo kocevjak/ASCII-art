@@ -19,7 +19,8 @@ Pomocí Slideru můžeme u otevřeného obrázku upravit jas a contrast
 ### Save as image
 ![ASCII art](https://github.com/kocevjak/ASCII-art/assets/63099083/354cd892-4ba2-4db3-b138-401d55d34af0)
 
-### Save as text
-
 ### Save as both
+#### Horizontální řazení
 ![ASCII art](https://github.com/kocevjak/ASCII-art/assets/63099083/88dcae70-21d9-4607-845a-0e0c872b0a5c)
+#### Vertikální řazení
+![ASCII_art_03](https://github.com/kocevjak/ASCII-art/assets/63099083/aa55c701-af84-4217-80e5-ff3bf105b44e)
