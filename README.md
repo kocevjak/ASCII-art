@@ -7,9 +7,13 @@ V levém horním rohu klikneme na ikonku File. Otevře se rozbalovací nabídka 
 ### Uprava obrázku
 Pomocí Slideru můžeme u otevřeného obrázku upravit jas a contrast
 ### Uložení obrázku
-"File" -> "Save as" -> , zde vybereme v jakém formátu chceme obrázek uložit a umístění kam se obrázek uloží.
+"File" -> "Save as" -> "Save as image" - ascii art se uloží jako obrázek jpg<br>
 
-## videoukazka
+"File" -> "Save as" -> "Save as text" - ascii art se uloží jako soubor .txt<br>
+
+"File" -> "Save as" -> "Save both pictures" - uloží původní obrázek společně s ascii obrázkem. Lze zvolit jestli obrázky budou vedle sebe horizontálně nebo vertikálně.
+
+## video ukázka
 ![Video ukáza](https://github.com/kocevjak/ASCII-art/assets/63099083/a9f3aa44-f972-407e-9cbf-0945b350af9f)
 
 ## ukázka obrázků
